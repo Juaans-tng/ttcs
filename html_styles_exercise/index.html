@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Định dạng văn bản với HTML Styles</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #ffffff;
+            max-width: 680px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+        h1 {
+            border-bottom: 2px solid #ebf8ff;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 1. Tiêu đề h1 có màu xanh dương -->
+        <h1 style="color: blue;">Bài viết của tôi</h1>
+
+        <!-- 2. Đoạn văn p màu đỏ và in đậm -->
+        <p style="color: red; font-weight: bold;">
+            Đây là đoạn văn được định dạng màu sắc
+        </p>
+
+        <!-- 3. Đoạn văn p in nghiêng và căn giữa -->
+        <p style="font-style: italic; text-align: center;">
+            Tôi đang học HTML Styles
+        </p>
+
+        <!-- 4. Đoạn văn p kích thước chữ 20px và gạch chân -->
+        <p style="font-size: 20px; text-decoration: underline;">
+            Định dạng văn bản giúp trang web đẹp hơn
+        </p>
+    </div>
+</body>
+</html>
