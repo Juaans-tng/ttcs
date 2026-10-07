@@ -1,0 +1,706 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Monochromatic Theme Color Palettes (Steps 1-8) */
+:root, [data-theme="blue"] {
+	/* Palette 1: Monochromatic Blue (Tông Xanh Logo #00ADEE - Steps 1-7) */
+	--level-1: #00ADEE; /* Màu chính / Primary highlight */
+	--level-2: #00B2EF; /* Highlight cấp 2 */
+	--level-3: #00B7F1;
+	--level-4: #00BFF2; /* Màu nền Banner */
+	--level-5: #38C7F4;
+	--level-6: #5ECDF5;
+	--level-7: #8DD7F7; /* Màu nền phần Preview Cards */
+	--level-8: #A7E0F9; /* Borders & Accent */
+	--level-9: #C6E9FA; /* Màu nền phần Info */
+	
+	--text-main: #222222;
+	--text-light: #ffffff;
+	--btn-hover: #0090C7;
+	--btn-active: #007CAE;
+}
+
+[data-theme="purple"] {
+	/* Palette 2: Monochromatic Purple (Tông Tím Monochromatic - Step 8) */
+	--level-1: #8E44AD;
+	--level-2: #9B59B6;
+	--level-3: #A569BD;
+	--level-4: #AF7AC5;
+	--level-5: #BB8FCE;
+	--level-6: #C79FEF;
+	--level-7: #D7BDE2;
+	--level-8: #E8DAEF;
+	--level-9: #F4ECF7;
+	
+	--text-main: #222222;
+	--text-light: #ffffff;
+	--btn-hover: #7D3C98;
+	--btn-active: #6C3483;
+}
+
+[data-theme="green"] {
+	/* Palette 3: Monochromatic Emerald Green (Tông Xanh Lá Monochromatic - Step 8) */
+	--level-1: #00A86B;
+	--level-2: #00B876;
+	--level-3: #00C47E;
+	--level-4: #10D287;
+	--level-5: #36DD97;
+	--level-6: #5EE6AA;
+	--level-7: #8CEFC1;
+	--level-8: #B2F5D5;
+	--level-9: #D8FCEA;
+	
+	--text-main: #222222;
+	--text-light: #ffffff;
+	--btn-hover: #008F5A;
+	--btn-active: #00754A;
+}
+
+[data-theme="amber"] {
+	/* Palette 4: Monochromatic Sunset Amber (Tông Cam Nắng Monochromatic - Step 8) */
+	--level-1: #D35400;
+	--level-2: #E67E22;
+	--level-3: #EB984E;
+	--level-4: #F39C12;
+	--level-5: #F5B041;
+	--level-6: #F7DC6F;
+	--level-7: #F9E79F;
+	--level-8: #FCF3CF;
+	--level-9: #FEF9E7;
+	
+	--text-main: #222222;
+	--text-light: #ffffff;
+	--btn-hover: #BA4A00;
+	--btn-active: #A04000;
+}
+
+[data-theme="original"] {
+	/* Palette Gốc (Original Red) */
+	--level-1: #dc001e;
+	--level-2: #b23434;
+	--level-3: #8f292b;
+	--level-4: #c33;
+	--level-5: #e04545;
+	--level-6: #ea7070;
+	--level-7: #fac7d2;
+	--level-8: #fcdde4;
+	--level-9: #ccc;
+	
+	--text-main: #222222;
+	--text-light: #ffffff;
+	--btn-hover: #b23434;
+	--btn-active: #8f292b;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.clear {
+	clear: both;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.hide {
+	display: none;
+}
+::selection {
+	background: var(--level-1);
+	color: #fff;
+}
+::-moz-selection {
+	background: var(--level-1);
+	color: #fff;
+}
+.c2 {
+	width: 16.6666%;
+}
+.c3 {
+	width: 25%;
+}
+.c4 {
+	width: 33.3333%;
+}
+.c5 {
+	width: 41.6666%;
+}
+.c9 {
+	width: 75%;
+}
+.c12 {
+	width: 100%;
+}
+.c2, .c3, .c4, .c5, .c9, .c12 {
+	padding: 0 15px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.fix-size {
+	max-width: 1000px;
+	margin: auto;
+}
+/* core */
+@font-face {
+	font-family: font1;
+	src: url(fonts/pacifico.woff);
+}
+@font-face {
+	font-family: font2;
+	src: url(fonts/ptsans.woff);
+}
+body {
+	font-family: font2;
+	font-size: 15.5px;
+	color: var(--text-main);
+	background: url(images/bg.png);
+	line-height: 1.62em;
+}
+
+/* Theme Switcher Bar */
+.theme-switcher-bar {
+	background: #0f172a;
+	color: #fff;
+	padding: 10px 15px;
+	border-bottom: 2px solid var(--level-1);
+	font-family: font2, sans-serif;
+	font-size: 13px;
+	transition: border-color 0.3s ease;
+}
+.theme-switcher-inner {
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.theme-title {
+	font-weight: bold;
+	color: #f8fafc;
+}
+.theme-buttons {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+.btn-theme {
+	background: #1e293b;
+	color: #cbd5e1;
+	border: 1px solid #334155;
+	padding: 5px 12px;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	transition: all 0.2s ease;
+	width: auto;
+	height: auto;
+}
+.btn-theme:hover {
+	background: #334155;
+	color: #fff;
+}
+.btn-theme.active {
+	background: var(--level-1);
+	color: #fff;
+	border-color: var(--level-2);
+	font-weight: bold;
+}
+.color-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+/* header */
+header {
+	color: #eee;
+	background: #222;
+	line-height: 32px;
+}
+header a {
+	color: #808080;
+	font-size: 14px;
+}
+/* footer */
+footer {
+	color: #eee;
+	background: #111827;
+	line-height: 48px;
+}
+/* nav */
+body > nav ul {
+	margin-top: 45px;
+}
+body > nav ul li {
+	width: 31%;
+	display: inline-block;
+	text-align: center;
+}
+body > nav ul li a {
+	color: var(--level-1);
+	display: inline-block;
+	padding: 5px 0;
+	font-weight: bold;
+	transition: color 0.3s ease;
+}
+body > nav ul li:nth-child(2) a {
+	border-bottom: solid 1px;
+}
+body > nav ul:hover li a {
+	border-bottom: none;
+}
+body > nav ul li:hover a {
+	border-bottom: solid 1px;
+}
+body > nav a.c2 {
+	display: block;
+}
+body > nav a img {
+	display: block;
+	margin: 20px 0;
+}
+body > nav form {
+	margin-top: 45px;
+}
+input, button {
+	width: 100%;
+	height: 30px;
+	color: #a9a9a9;
+	background: none;
+	border: none;
+	outline: none;
+}
+body > nav input[type=search] {
+	width: 80%;
+	box-shadow: inset 0 1px 1px rgba(210, 210, 210, 0.8);
+	text-indent: 10px;
+}
+body > nav input[type=search]:focus {
+	background: #fff;
+	box-shadow: inset 0 1px 1px rgba(170, 170, 170, 0.7);
+}
+body > nav input[type=submit] {
+	width: 16%;
+	font-weight: bold;
+	color: #808080;
+	cursor: pointer;
+}
+body > nav input[type=search]:focus + input {
+	background: #fff;
+	box-shadow: inset 0 1px 1px rgba(170, 170, 170, 0.7);
+}
+
+/* banner (Bước 2: Nền chuyển thành màu Bậc 4 #00BFF2) */
+#banner {
+	background: var(--level-4);
+	box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.3), inset 0 -2px #fff;
+	font-weight: bold;
+	padding: 20px 0;
+	color: #fff;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+	transition: background 0.4s ease;
+}
+h1, h2, h3 {
+	font-family: font1;
+	line-height: normal;
+	padding-bottom: 10px;
+}
+h1 {
+	font-size: 44px;
+}
+h2 {
+	font-size: 38px;
+}
+h3 {
+	font-size: 24px;
+}
+/* Banner button (Bước 3: Chuyển màu nền đỏ theo tông màu Bậc 1 #00ADEE) */
+#banner aside button {
+	height: 56px;
+	border-radius: 5px;
+	margin-top: 30px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #eee;
+	box-shadow: inset 0 -3px 2px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+	background: var(--level-1);
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+#banner aside button:hover {
+	background: var(--btn-hover);
+	box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1), inset 0 -2px rgba(255, 255, 255, 0.1);
+}
+#banner aside button:active {
+	box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1), inset 0 -2px rgba(255, 255, 255, 0.1);
+	background: var(--btn-active);
+}
+#banner aside p {
+	text-align: center;
+	font-size: 10px;
+	padding: 5px 0;
+}
+
+/* main */
+#main {
+	padding-top: 20px;
+	overflow: hidden;
+}
+#main section > .right {
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+#main section h3 {
+	font-family: font2;
+	font-size: 24px !important;
+	margin-bottom: 25px;
+}
+#main section h3 del {
+	color: #b6b6b6;
+}
+#main section > p {
+	text-align: justify;
+	margin-bottom: 25px;
+}
+
+/* trans */
+.trans {
+	width: 225px;
+	height: 225px;
+	margin: auto;
+	perspective: 800px;
+	-webkit-perspective: 800px;
+}
+.trans .cover {
+	width: 225px;
+	height: 225px;
+	position: relative;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+}
+.trans .face {
+	background: url(images/disc-cover.png) no-repeat;
+	width: 205px;
+	height: 205px;
+	padding: 10px;
+	border-radius: 5px;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+	position: absolute;
+	overflow: hidden;
+}
+.trans .back {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3), inset 0 225px rgba(255, 255, 255, 0.85);
+	text-align: center;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	padding: 9px;
+	border: solid 1px var(--level-8);
+}
+.trans:hover .cover {
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+}
+.trans .back b {
+	font-size: 14px;
+}
+.trans .back ol {
+	margin-top: 10px;
+}
+.trans .back ol li {
+	list-style: decimal inside;
+	line-height: 28px;
+	text-align: left;
+}
+/* Bước 3: ON SALE Ribbon đổi từ màu đỏ sang màu Bậc 1 #00ADEE */
+.trans .on-sale {
+	background: var(--level-1);
+	color: #fff;
+	font-weight: bold;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	margin-top: 14px;
+	margin-left: -140px;
+	text-align: center;
+	line-height: 28px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.trans .back button {
+	color: #fff;
+	background: var(--level-1);
+	border-radius: 4px;
+	margin-top: 10px;
+	width: 100px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background 0.3s ease;
+}
+.trans .back button:hover {
+	background: var(--btn-hover);
+}
+
+/* main preview */
+#main .preview li {
+	width: 50%;
+}
+/* Bước 4: Màu nền phần nội dung Preview chuyển thành màu Bậc 7 #8DD7F7, chữ màu đen */
+#main .preview li a {
+	display: block;
+	background: var(--level-7);
+	border-radius: 5px;
+	margin: 15px;
+	overflow: hidden;
+	color: var(--text-main);
+	position: relative;
+	padding: 10px;
+	transition: all 0.3s ease;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+}
+#main .preview li a:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+#main .preview li.left a {
+	margin-left: 0;
+}
+#main .preview li.right a {
+	margin-right: 0;
+}
+/* Bước 3: PREVIEW Title & Circle chuyển từ đỏ sang màu Bậc 1 #00ADEE */
+#main .preview .title {
+	color: #fff;
+	font-size: 10px;
+	font-weight: bold;
+	display: block;
+	padding: 0 20px;
+	line-height: 14px;
+	background: var(--level-1);
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	position: absolute;
+	top: 13px;
+	left: -20px;
+}
+#main .preview .circle {
+	margin-left: 10px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: var(--level-1);
+	position: relative;
+	transition: background 0.3s ease;
+}
+#main .preview li a:hover .circle {
+	background: var(--btn-hover);
+}
+#main .preview .triangle {
+	color: #fff;
+	font-size: 28px;
+	transform: scaleY(2.5);
+	-webkit-transform: scaleY(2.5);
+	top: 7px;
+	left: 14px;
+	position: absolute;
+}
+#main .preview b {
+	font-family: font1;
+	display: block;
+	line-height: 22px;
+}
+#main .preview small {
+	font-size: 10px;
+	display: block;
+	line-height: 20px;
+}
+#main blockquote {
+	position: relative;
+	margin-bottom: 35px;
+}
+#main blockquote .quote {
+	font-size: 18px;
+	transform: scale(10, 10);
+	-webkit-transform: scale(10, 10);
+	color: #ddd;
+	position: absolute;
+	left: 20px;
+	top: 65px;
+}
+#main blockquote p {
+	padding-top: 20px;
+	padding-left: 70px;
+	font-size: 23px;
+	font-style: italic;
+	color: #6f6f6f;
+}
+#main blockquote small {
+	display: block;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+#main aside h3 {
+	padding-bottom: 0px;
+}
+#main aside p {
+	text-align: center;
+}
+#main aside .about {
+	margin-bottom: 15px;
+	padding-bottom: 20px;
+	border-bottom: #ccc dashed 1px;
+	text-align: justify;
+	margin-top: 5px;
+}
+#main aside .aside-cover {
+	margin-bottom: 15px;
+}
+
+/* Bước 5: Đổi màu nền phần info thành màu Bậc 9 #C6E9FA */
+#info {
+	padding: 25px 0;
+	background: var(--level-9);
+	color: var(--text-main);
+	transition: background 0.4s ease;
+}
+#info p {
+	margin-bottom: 15px;
+	text-align: justify;
+}
+#info input[type=email] {
+	text-indent: 10px;
+	background: #fff;
+	border: 1px solid var(--level-8);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+	margin-bottom: 15px;
+	border-radius: 4px;
+}
+#info input[type=submit] {
+	background: var(--level-1);
+	color: #fff;
+	font-weight: bold;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+#info input[type=submit]:hover {
+	background: var(--btn-hover);
+}
+
+/* small screen */
+@media (max-width: 800px) {
+.hide {
+	display: block;
+}
+.show {
+	display: none;
+}
+.c {
+	width: 100%;
+}
+header a.right {
+	float: left;
+}
+header a.hide {
+	float: right;
+}
+header a.hide img {
+	display: block;
+	margin: 6px;
+}
+body > nav a.c2 img {
+	margin: 20px auto;
+}
+#banner {
+	padding-bottom: 10px;
+}
+h1 {
+	font-size: 34px;
+}
+h2 {
+	font-size: 28px;
+}
+h3 {
+	font-size: 18px;
+}
+#main .preview li {
+	width: 100%;
+}
+#main .preview li a {
+	margin: 15px 0;
+}
+#main aside .aside-cover {
+	width: 50%;
+	float: left;
+}
+#main-nav {
+	margin: 50px 0;
+}
+#main-nav ul li a {
+	display: block;
+	line-height: 56px;
+	border-top: #ddd solid 1px;
+	color: var(--level-1);
+	padding: 0 10px;
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+}
+#main-nav ul li:last-child a {
+	border-bottom: #ddd solid 1px;
+}
+#main-nav ul li a:hover {
+	background: var(--level-7);
+}
+#main-nav .arrow {
+	background: url(images/arrow.png) no-repeat bottom;
+	width: 30px;
+	height: 20px;
+	display: inline-block;
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+}
+#main-nav ul li:first-child a:hover .arrow {
+	background: url(images/double-arrow.png) no-repeat bottom;
+}
+#main-nav input {
+	border: #aaa solid 1px;
+	height: 34px;
+	margin: 10px 0;
+}
+#main-nav input[type=search] {
+	box-shadow: inset 0 1px 1px rgba(170, 170, 170, 0.4);
+	text-indent: 10px;
+}
+#main-nav input[type=submit] {
+	color: #222;
+}
+}
+@media (max-width: 500px) {
+header p.c9 {
+	width: 66.6666%;
+}
+header p.c3 {
+	width: 33.3333%;
+}
+}

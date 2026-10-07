@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Version 2 - Warm Sunset Coral & Amber (Adobe Color Palette)</title>
+    <!-- Liên kết Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================
+           VERSION 2: WARM SUNSET CORAL & AMBER PALETTE (ADOBE COLOR)
+           Harmony Rule: Complementary / Warm Editorial Palette
+           ========================================================== */
+        :root {
+            --primary-color: #E05A47;         /* Sunset Coral - Primary Brand */
+            --darker-primary-color: #C0392B;  /* Crimson Coral - Hover States */
+            --secondary-color: #2C1810;       /* Dark Chocolate Mahogany - Footer & Text */
+            --accent-color: #F28E2B;          /* Golden Amber - Highlight Card */
+            --highlight-cta: #FFB703;         /* Warm Gold - Action CTA Button */
+            --cta-text: #2C1810;              /* Text trên nút CTA */
+            --text-color: #2D3748;            /* Text chính */
+            --light-bg-color: #FFF8F0;        /* Warm Cream Background */
+            --card-bg: #FFFFFF;
+            --border-color: #FFE8D6;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light-bg-color);
+            color: var(--text-color);
+        }
+
+        .primary-bg { background-color: var(--primary-color) !important; }
+        .secondary-bg { background-color: var(--secondary-color) !important; }
+        .accent-bg { background-color: var(--accent-color) !important; }
+        
+        .text-primary-color { color: var(--primary-color) !important; }
+        .text-secondary-color { color: var(--secondary-color) !important; }
+        .text-accent-color { color: var(--accent-color) !important; }
+
+        .newsletter-header {
+            background: linear-gradient(135deg, #E05A47 0%, #F28E2B 100%);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(224, 90, 71, 0.25);
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(224, 90, 71, 0.3);
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--darker-primary-color);
+            border-color: var(--darker-primary-color);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4);
+        }
+
+        .btn-cta-gold {
+            background-color: var(--highlight-cta);
+            color: var(--cta-text);
+            border: none;
+            font-weight: 800;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 183, 3, 0.4);
+        }
+
+        .btn-cta-gold:hover {
+            background-color: #FFC300;
+            color: var(--cta-text);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 183, 3, 0.6);
+        }
+
+        .custom-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(224, 90, 71, 0.12);
+        }
+
+        .badge-adobe {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5" style="max-width: 800px;">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-4 p-5 text-white newsletter-header position-relative">
+            <span class="badge-adobe mb-3 d-inline-block">🎨 Adobe Color Palette 2: Warm Sunset Coral & Amber</span>
+            <div class="mb-2">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </div>
+            <h1 class="fw-bold display-5">Trello Creative Edition</h1>
+            <p class="lead opacity-90">Phiên bản Newsletter Trầm Ấm & Sáng Tạo (Warm Editorial Coral)</p>
+        </header>
+
+        <!-- Main Banner Card -->
+        <section class="card mb-4 custom-card overflow-hidden">
+            <div class="card-body p-4 p-md-5">
+                <span class="text-uppercase fw-bold text-accent-color small tracking-wide">Chủ đề Sáng Tạo & Đổi Mới</span>
+                <h2 class="card-title text-primary-color fw-bold mt-2 mb-3">Chào mừng bạn đến với Bản tin Cảm hứng làm việc!</h2>
+                <p class="card-text text-secondary fs-6 leading-relaxed mb-4">
+                    Bộ màu thứ 2 được xây dựng từ <strong>Adobe Color</strong> theo quy tắc <em>Complementary (Bổ túc) / Warm Editorial</em>. Sự kết hợp giữa màu Sunset Coral rạng rỡ và Mahogany trầm tạo nên cảm giác ấm áp, thân thiện và giàu cảm hứng.
+                </p>
+                <a href="#" class="btn btn-primary-custom">Đọc bài viết nổi bật &rarr;</a>
+            </div>
+        </section>
+
+        <!-- Feature Grid (2 Cards) -->
+        <section class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 secondary-bg text-white custom-card">
+                    <div class="card-body p-4">
+                        <div class="fs-1 mb-2">☕</div>
+                        <h3 class="card-title fw-bold h4">Không gian làm việc ấm cúng</h3>
+                        <p class="card-text opacity-90 small">
+                            Màu nền Dark Mahogany trầm tính giúp làm nổi bật tiêu đề và tạo chiều sâu thị giác sang trọng cho email.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 accent-bg text-white custom-card">
+                    <div class="card-body p-4">
+                        <div class="fs-1 mb-2">🔥</div>
+                        <h3 class="card-title fw-bold h4">Bứt phá ý tưởng mới</h3>
+                        <p class="card-text opacity-90 small">
+                            Tông màu Golden Amber rực rỡ thu hút ánh nhìn ngay lập tức vào các mẹo nâng cao năng suất công việc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-action Banner -->
+        <section class="p-4 p-md-5 text-center primary-bg text-white rounded-4 shadow-sm mb-4">
+            <h3 class="fw-bold mb-2">Gia nhập cộng đồng Trello Creators</h3>
+            <p class="mb-4 opacity-90">Kết nối với hàng triệu nhà quản lý và nhà thiết kế trên toàn thế giới.</p>
+            <a href="#" class="btn btn-cta-gold">Tham gia cộng đồng ngay</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center p-4 secondary-bg text-white rounded-4">
+            <p class="mb-1 opacity-75">&copy; 2026 Trello & Atlassian Inc. Mọi quyền được bảo lưu.</p>
+            <small class="opacity-50">Thiết kế bài tập phối màu Newsletter với Bootstrap 5 & Adobe Color</small>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

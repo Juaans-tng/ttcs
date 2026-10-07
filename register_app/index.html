@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết Kế UI/UX - Trang Đăng Ký Người Dùng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+    </div>
+
+    <main class="app-container">
+        <!-- TRANG 1: FORM ĐĂNG KÝ -->
+        <section id="page-register" class="card-view active">
+            <header class="form-header">
+                <div class="brand-logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="12" fill="url(#logo-grad)"/>
+                        <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40">
+                                <stop stop-color="#00C6FF"/>
+                                <stop offset="1" stop-color="#0072FF"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>VibeNet</span>
+                </div>
+                <h1>Tạo tài khoản mới</h1>
+                <p class="subtitle">Bắt đầu trải nghiệm nền tảng dành cho nhà sáng tạo</p>
+            </header>
+
+            <form id="register-form" novalidate>
+                <!-- Trường Họ và Tên -->
+                <div class="form-group">
+                    <label for="fullname">Họ và tên <span class="required-star">*</span></label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <input type="text" id="fullname" placeholder="Ví dụ: Nguyễn Minh Đức" autocomplete="name" required>
+                    </div>
+                    <span class="error-msg" id="fullname-error"></span>
+                </div>
+
+                <!-- Trường Email -->
+                <div class="form-group">
+                    <label for="email">Địa chỉ Email <span class="required-star">*</span></label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <input type="email" id="email" placeholder="name@example.com" autocomplete="email" required>
+                    </div>
+                    <span class="error-msg" id="email-error"></span>
+                </div>
+
+                <!-- Trường Mật khẩu -->
+                <div class="form-group">
+                    <label for="password">Mật khẩu <span class="required-star">*</span></label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <input type="password" id="password" placeholder="Tối thiểu 8 ký tự" autocomplete="new-password" required>
+                        <button type="button" class="btn-toggle-pw" aria-label="Hiện mật khẩu">
+                            <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Thanh đo độ mạnh mật khẩu -->
+                    <div class="password-meter-container">
+                        <div class="meter-bar">
+                            <div class="meter-fill" id="meter-fill"></div>
+                        </div>
+                        <span class="meter-text" id="meter-text">Nhập mật khẩu</span>
+                    </div>
+                    <span class="error-msg" id="password-error"></span>
+                </div>
+
+                <!-- Trường Xác nhận Mật khẩu -->
+                <div class="form-group">
+                    <label for="confirm-password">Xác nhận mật khẩu <span class="required-star">*</span></label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu vừa đặt" autocomplete="new-password" required>
+                    </div>
+                    <span class="error-msg" id="confirm-password-error"></span>
+                </div>
+
+                <!-- Checkbox Đồng ý điều khoản -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" required>
+                        <span class="custom-checkbox"></span>
+                        <span class="terms-text">Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách bảo mật</a></span>
+                    </label>
+                    <span class="error-msg" id="terms-error"></span>
+                </div>
+
+                <!-- Nút Submit chính (Áp dụng Fitts' Law: Kích thước lớn, nổi bật) -->
+                <button type="submit" id="btn-submit" class="btn-primary-cta">
+                    <span>ĐĂNG KÝ TÀI KHOẢN</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Footer liên kết Đăng nhập -->
+                <p class="form-footer">
+                    Đã có tài khoản? <a href="#" id="link-login">Đăng nhập ngay</a>
+                </p>
+            </form>
+        </section>
+
+        <!-- TRANG 2: TRANG XÁC NHẬN THÀNH CÔNG -->
+        <section id="page-success" class="card-view">
+            <div class="success-content">
+                <div class="success-icon-wrapper">
+                    <div class="icon-pulse-bg"></div>
+                    <svg class="success-check" viewBox="0 0 52 52">
+                        <circle class="check-circle" cx="26" cy="26" r="24" fill="none"/>
+                        <path class="check-path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+
+                <h2>Đăng Ký Thành Công! 🎉</h2>
+                <p class="success-sub">Tài khoản của bạn đã được khởi tạo thành công trên hệ thống VibeNet.</p>
+
+                <div class="user-summary-card">
+                    <div class="summary-row">
+                        <span class="summary-label">Tên người dùng:</span>
+                        <strong class="summary-val" id="res-name">Nguyễn Minh Đức</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Email đăng ký:</span>
+                        <strong class="summary-val" id="res-email">duc.nguyen@email.com</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Thời gian tạo:</span>
+                        <strong class="summary-val" id="res-time">Vừa xong</strong>
+                    </div>
+                </div>
+
+                <div class="success-actions">
+                    <button type="button" id="btn-explore" class="btn-primary-cta">
+                        <span>KHÁM PHÁ NGAY</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                    <button type="button" id="btn-back-form" class="btn-secondary-action">
+                        <span>Tạo tài khoản khác</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

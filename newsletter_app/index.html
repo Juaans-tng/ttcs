@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Bài Tập: Phối Màu Newsletter với Adobe Color & Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        .showcase-header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid #334155;
+            padding: 30px 0;
+        }
+
+        .nav-pills .nav-link {
+            color: #94a3b8;
+            font-weight: 700;
+            padding: 10px 24px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+        }
+
+        .palette-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .color-swatch {
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .preview-iframe {
+            width: 100%;
+            height: 850px;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="showcase-header mb-4">
+        <div class="container text-center">
+            <span class="badge bg-primary px-3 py-2 rounded-pill mb-2">BÀI TẬP PHỐI MÀU NEWSLETTER</span>
+            <h1 class="fw-bold display-6">So Sánh 2 Phiên Bản Phối Màu Adobe Color</h1>
+            <p class="text-secondary">Ứng dụng nguyên tắc phối màu Adobe Color và Bootstrap 5 cho Newsletter Trello</p>
+            
+            <div class="d-flex justify-content-center gap-2 mt-4">
+                <ul class="nav nav-pills bg-slate-800 p-1 rounded-pill border border-slate-700" id="versionTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="v1-tab" data-bs-toggle="tab" data-bs-target="#v1-panel" type="button" role="tab">
+                            🌊 Phiên Bản 1: Ocean Teal (#00A896)
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="v2-tab" data-bs-toggle="tab" data-bs-target="#v2-panel" type="button" role="tab">
+                            🌅 Phiên Bản 2: Sunset Coral (#E05A47)
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="split-tab" data-bs-toggle="tab" data-bs-target="#split-panel" type="button" role="tab">
+                            📊 So Sánh Song Song
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tab-content" id="versionTabContent">
+            
+            <!-- PANEL VERSION 1 -->
+            <div class="tab-pane fade show active" id="v1-panel" role="tabpanel">
+                <div class="palette-card mb-4">
+                    <h5 class="fw-bold text-cyan mb-3">🎨 Bảng Màu Adobe Color Version 1: Ocean Cyan & Tech Teal (Analogous)</h5>
+                    <div class="row g-2 text-white">
+                        <div class="col">
+                            <div class="color-swatch" style="background: #00A896;">#00A896<br>Primary Teal</div>
+                        </div>
+                        <div class="col">
+                            <div class="color-swatch" style="background: #028090;">#028090<br>Hover Teal</div>
+                        </div>
+                        <div class="col">
+                            <div class="color-swatch" style="background: #05668D;">#05668D<br>Navy Secondary</div>
+                        </div>
+                        <div class="col">
+                            <div class="color-swatch" style="background: #02C39A; color:#000;">#02C39A<br>Mint Accent</div>
+                        </div>
+                        <div class="col">
+                            <div class="color-swatch" style="background: #00E5FF; color:#000;">#00E5FF<br>Electric CTA</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="fw-bold">Preview Trực Tiếp - Newsletter Version 1</h4>
+                    <a href="newsletter_v1.html" target="_blank" class="btn btn-outline-info btn-sm">Mở file newsletter_v1.html &nearr;</a>
+                </div>
+                <iframe src="newsletter_v1.html" class="preview-iframe"></iframe>
+            </div>
+
+            <!-- PANEL VERSION 2 -->
+            <div class="tab-pane fade" id="v2-panel" role="tabpanel">
+                <div class="palette-card mb-4">
+                    <h5 class="fw-bold text-warning mb-3">🎨 Bảng Màu Adobe Color Version 2: Warm Sunset Coral & Amber (Complementary)</h5>
+                    <div class="row g-2 text-white">
+                        <div class="col">
+                            <div class="color-swatch" style="background: #E05A47;">#E05A47<br>Sunset Coral</div>
+                        </div>
+                        <div class="col">
+                            <div class="color-swatch" style="background: #C0392B;">#C0392B<br>Crimson Hover</div>
+                        </div>
+                        <div class="col">
+                            <div class="color-swatch" style="background: #2C1810;">#2C1810<br>Dark Mahogany</div>
+                        </div>
+                        <div class="col">
+                            <div class="color-swatch" style="background: #F28E2B;">#F28E2B<br>Golden Amber</div>
+                        </div>
+                        <div class="col">
+                            <div class="color-swatch" style="background: #FFB703; color:#000;">#FFB703<br>Warm CTA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="fw-bold">Preview Trực Tiếp - Newsletter Version 2</h4>
+                    <a href="newsletter_v2.html" target="_blank" class="btn btn-outline-warning btn-sm">Mở file newsletter_v2.html &nearr;</a>
+                </div>
+                <iframe src="newsletter_v2.html" class="preview-iframe"></iframe>
+            </div>
+
+            <!-- PANEL SPLIT COMPARISON -->
+            <div class="tab-pane fade" id="split-panel" role="tabpanel">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="p-2 bg-dark rounded-3 text-center mb-2">
+                            <strong class="text-info">VERSION 1: Ocean Cyan & Tech Teal</strong>
+                        </div>
+                        <iframe src="newsletter_v1.html" class="preview-iframe" style="height: 750px;"></iframe>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-2 bg-dark rounded-3 text-center mb-2">
+                            <strong class="text-warning">VERSION 2: Warm Sunset Coral & Amber</strong>
+                        </div>
+                        <iframe src="newsletter_v2.html" class="preview-iframe" style="height: 750px;"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

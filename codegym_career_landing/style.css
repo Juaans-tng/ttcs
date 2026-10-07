@@ -1,0 +1,223 @@
+/* ==========================================================================
+   CodeGym Career Material Design Custom Styles
+   Framework: MDBootstrap (Material Design for Bootstrap)
+   Palette: CodeGym Red (#CC0000), Navy Dark (#1C2331), Soft Slate (#F8F9FA)
+   ========================================================================== */
+
+:root {
+    --cg-red: #CC0000;
+    --cg-red-dark: #A70000;
+    --cg-navy: #1C2331;
+    --cg-navy-light: #2E3951;
+    --cg-purple: #6F42C1;
+    --text-primary: #212529;
+    --text-muted: #6C757D;
+    --bg-light: #F8F9FA;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Custom Red Colors */
+.text-danger-custom {
+    color: var(--cg-red) !important;
+}
+
+.btn-danger-custom {
+    background-color: var(--cg-red) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(204, 0, 0, 0.35);
+    transition: all 0.3s ease;
+}
+
+.btn-danger-custom:hover, .btn-danger-custom:focus {
+    background-color: var(--cg-red-dark) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.bg-soft-danger {
+    background-color: rgba(204, 0, 0, 0.08) !important;
+}
+
+.icon-box-shape {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.hoverable-card:hover .icon-box-shape {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.avatar-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.icon-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* Navbar */
+.mdb-color-nav {
+    background-color: rgba(28, 35, 49, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-badge {
+    background-color: var(--cg-red);
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1C2331 0%, #0F141D 50%, #7E0000 100%);
+    position: relative;
+    padding-top: 100px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 80% 20%, rgba(204, 0, 0, 0.25) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.text-gradient-red {
+    background: linear-gradient(90deg, #FF4D4D 0%, #FF8080 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-shadow {
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.bg-dark-glass {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+}
+
+/* Stat Counter Card */
+.card-stat {
+    border-radius: 12px;
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-stat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Card Headers */
+.red-gradient {
+    background: linear-gradient(135deg, #CC0000 0%, #800000 100%) !important;
+}
+
+.blue-gradient {
+    background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%) !important;
+}
+
+.purple-gradient {
+    background: linear-gradient(135deg, #8E24AA 0%, #4A148C 100%) !important;
+}
+
+.peach-gradient {
+    background: linear-gradient(135deg, #FF6F00 0%, #E65100 100%) !important;
+}
+
+/* Hoverable Cards */
+.hoverable-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px !important;
+}
+
+.hoverable-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.bg-dark-gradient {
+    background: linear-gradient(135deg, #1C2331 0%, #0D121B 100%) !important;
+}
+
+.mdb-color-footer {
+    background-color: #151B26 !important;
+}
+
+/* Tracking */
+.tracking-wider {
+    letter-spacing: 1.5px;
+}
+
+.tracking-wide {
+    letter-spacing: 0.8px;
+}
+
+/* Custom Text Colors */
+.text-purple {
+    color: var(--cg-purple) !important;
+}
+
+.btn-outline-purple {
+    border-color: var(--cg-purple) !important;
+    color: var(--cg-purple) !important;
+}
+
+.btn-outline-purple:hover {
+    background-color: var(--cg-purple) !important;
+    color: #ffffff !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 110px;
+    }
+}
