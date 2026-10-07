@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Order Form - Tạo Form Cơ Bản</title>
+    <style>
+        .wufoo {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+            background-color: #ffffff;
+            max-width: 580px;
+            margin: 30px auto;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            color: #2d3748;
+        }
+
+        body {
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2b6cb0;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ebf8ff;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-weight: bold;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-size: 14.5px;
+        }
+
+        select, input[type="text"] {
+            padding: 7px 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        select:focus, input[type="text"]:focus {
+            border-color: #3182ce;
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+        }
+
+        input[type="button"], input[type="submit"] {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 15px;
+        }
+
+        input[type="button"]:hover, input[type="submit"]:hover {
+            background-color: #2b6cb0;
+        }
+
+        .phone-group input {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Form theo đúng yêu cầu đề bài sử dụng class wufoo -->
+    <form method="get" action="simpleform.html" class="wufoo">
+        <h2>Order Form</h2>
+        
+        <!-- 1. Tùy chọn sản phẩm với select ... option -->
+        <p>What would you like to buy?</p>
+        <select name="product">
+            <option value="A">A</option>
+            <option value="B">B (+ 0.5$)</option>
+            <option value="C">C (+ 0.5$)</option>
+        </select>
+
+        <!-- 2. Tạo radio button cho số lượng -->
+        <p>How many would you like to order?</p>
+        <input type="radio" name="rd" id="rd1" value="1"/> <label for="rd1">1 - $10</label><br/>
+        <input type="radio" name="rd" id="rd2" value="2"/> <label for="rd2">2 - $20</label><br/>
+        <input type="radio" name="rd" id="rd3" value="3"/> <label for="rd3">3 - $25</label><br/>
+
+        <!-- 3. Tạo textfield cho Tên, Email và Số điện thoại -->
+        <p>Name <span style="color: red">*</span></p>
+        <input type="text" name="firstname" placeholder="FirstName" size="15"/>
+        <input type="text" name="lastname" placeholder="LastName" size="15"/>
+
+        <p>Email</p>
+        <input type="text" name="email" placeholder="example@domain.com" size="35"/>
+
+        <p>Phone Number</p>
+        <div class="phone-group">
+            <input type="text" name="phone1" placeholder="###" size="5"/> -
+            <input type="text" name="phone2" placeholder="###" size="5"/> -
+            <input type="text" name="phone3" placeholder="####" size="5"/>
+        </div>
+
+        <!-- 4. Tạo nút Submit -->
+        <p>
+            <input type="button" name="btSubmit" value="Submit"/>
+        </p>
+    </form>
+
+</body>
+</html>
