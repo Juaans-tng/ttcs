@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng danh sách trong HTML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #ffffff;
+            max-width: 680px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+        h1 {
+            color: #c53030;
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #feb2b2;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2b6cb0;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #bee3f8;
+            padding-bottom: 8px;
+        }
+        ul, ol {
+            padding-left: 28px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        ul li::marker {
+            color: #e53e3e;
+            font-size: 18px;
+        }
+        ol li::marker {
+            color: #3182ce;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 1. Tiêu đề h1 món ăn yêu thích -->
+        <h1>Những món ăn yêu thích của tôi</h1>
+
+        <!-- 2. Danh sách không có thứ tự ul liệt kê 5 món ăn -->
+        <ul>
+            <li>Phở Bò Gia Truyền Hà Nội</li>
+            <li>Bún Chả Nướng Than Hoa</li>
+            <li>Bánh Mì Kẹp Thịt Nướng Sài Gòn</li>
+            <li>Cơm Tấm Sườn Bì Chả</li>
+            <li>Nem Rán Hải Sản Crispy</li>
+        </ul>
+
+        <!-- 3. Tiêu đề h2 chuẩn bị du lịch -->
+        <h2>Các bước chuẩn bị cho một chuyến du lịch</h2>
+
+        <!-- 4. Danh sách có thứ tự ol mô tả 5 bước chuẩn bị -->
+        <ol>
+            <li>Lên kế hoạch chọn địa điểm, ngân sách và thời gian du lịch phù hợp.</li>
+            <li>Đặt trước vé máy bay/tàu xe và phòng khách sạn/homestay uy tín.</li>
+            <li>Chuẩn bị hành lý, quần áo, thuốc men và đồ dùng cá nhân cần thiết.</li>
+            <li>Kiểm tra kỹ giấy tờ tùy thân (CCCD, Hộ chiếu, Thẻ ATM và Tiền mặt).</li>
+            <li>Kiểm tra lại toàn bộ lịch trình, sạc đầy pin thiết bị và sẵn sàng xuất phát.</li>
+        </ol>
+    </div>
+</body>
+</html>
