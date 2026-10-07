@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tìm kiếm Google & Bing</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #202124;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #ffffff;
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #dadce0;
+        }
+        h1 {
+            color: #1a73e8;
+            font-size: 26px;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        .search-box {
+            background-color: #f1f3f4;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .search-box h2 {
+            font-size: 17px;
+            color: #3c4043;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        input[type="text"] {
+            flex: 1;
+            min-width: 240px;
+            height: 44px;
+            padding: 0 16px;
+            border: 1px solid #dadce0;
+            border-radius: 24px;
+            font-size: 15px;
+            outline: none;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+        }
+        input[type="submit"] {
+            height: 44px;
+            padding: 0 24px;
+            background-color: #1a73e8;
+            color: #ffffff;
+            border: none;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #1557b0;
+        }
+        .btn-bing {
+            background-color: #008373 !important;
+        }
+        .btn-bing:hover {
+            background-color: #006054 !important;
+        }
+        .note-box {
+            background-color: #e8f0fe;
+            border-left: 4px solid #1a73e8;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Form Tìm Kiếm Trực Tuyến</h1>
+
+        <!-- Bước 3: Form Tìm kiếm Google Search với method="GET", action Google, name="q" -->
+        <div class="search-box">
+            <h2>🔍 Tìm kiếm với Google Search</h2>
+            <form action="https://www.google.com.vn/search" method="GET"> 
+                <input type="text" name="q" placeholder="Nhập từ khóa muốn tìm trên Google..."/>
+                <input type="submit" value="Tìm kiếm Google"/>
+            </form>
+        </div>
+
+        <!-- Mở rộng: Form Tìm kiếm Bing Search -->
+        <div class="search-box" style="background-color: #e6f4f1;">
+            <h2 style="color: #006054;">🌐 Tìm kiếm với Microsoft Bing</h2>
+            <form action="https://www.bing.com/search" method="GET"> 
+                <input type="text" name="q" placeholder="Nhập từ khóa muốn tìm trên Bing..."/>
+                <input type="submit" class="btn-bing" value="Tìm kiếm Bing"/>
+            </form>
+        </div>
+
+        <!-- Lưu ý về phương thức GET vs POST và tham số name="q" -->
+        <div class="note-box">
+            <strong>📌 Ghi chú phương thức gửi dữ liệu:</strong>
+            <ul>
+                <li><strong>method="GET"</strong>: Gửi dữ liệu dưới dạng tham số đính kèm trên URL (ví dụ: <code>?q=từ+khóa</code>). Thù hợp cho các thao tác truy vấn/tìm kiếm thông tin.</li>
+                <li><strong>method="POST"</strong>: Gửi dữ liệu ẩn trong thân yêu cầu HTTP, dùng cho các thông tin nhạy cảm (như mật khẩu, thanh toán).</li>
+                <li><strong>name="q"</strong>: Tên biến tham số tìm kiếm được quy định bởi máy chủ Google & Bing để tiếp nhận từ khóa.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
