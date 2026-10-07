@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page - GitProject</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #dd6b20;
+            border-bottom: 2px solid #feebc8;
+            padding-bottom: 10px;
+        }
+        .news-item {
+            background: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        nav a {
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to News Page</h1>
+        <p>Đây là trang thông tin và bản tin mới nhất trong dự án GitProject.</p>
+        
+        <div class="news-item">
+            <strong>📢 Bản Tin Git 1:</strong> Đã tạo thành công tập tin README.md và commit lên Git.
+        </div>
+        <div class="news-item">
+            <strong>🚀 Bản Tin Git 2:</strong> Thư mục source/ với index.html và news.html đã được thêm vào dự án.
+        </div>
+
+        <nav>
+            <a href="index.html">&larr; Quay Về Trang Chủ</a>
+            <a href="news.html">Trang Tin Tức</a>
+        </nav>
+    </div>
+</body>
+</html>
