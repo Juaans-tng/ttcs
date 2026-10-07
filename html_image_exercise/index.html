@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng thẻ hình ảnh trong HTML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #ffffff;
+            max-width: 720px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        h1 {
+            color: #2b6cb0;
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #bee3f8;
+            padding-bottom: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            margin: 15px 0;
+        }
+        p.caption {
+            font-style: italic;
+            color: #718096;
+            font-size: 14.5px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 1. Tiêu đề h1 -->
+        <h1>Hình ảnh yêu thích của tôi</h1>
+
+        <!-- 2. Thẻ <img> với thuộc tính src và alt mô tả chi tiết -->
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" 
+             alt="Cảnh bình minh rạng rỡ trên bãi biển nhiệt đới với cát trắng và làn nước biển trong xanh" 
+             width="650">
+
+        <!-- 3. Mô tả chú thích ảnh -->
+        <p class="caption">
+            Hình ảnh: Bình minh trên bãi biển nhiệt đới - Cảnh quan thiên nhiên thư thái và rạng rỡ.
+        </p>
+    </div>
+</body>
+</html>
