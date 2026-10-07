@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách trong HTML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #102a43;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #ffffff;
+            max-width: 720px;
+            width: 100%;
+            padding: 35px 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #d9e2ec;
+        }
+        h1 {
+            color: #0b69a3;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #62b6cb;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #103b5d;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        ul, ol {
+            padding-left: 28px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        ul li::marker {
+            color: #0b69a3;
+        }
+        ol li::marker {
+            color: #d97706;
+            font-weight: bold;
+        }
+        .nested-box {
+            background-color: #f8fafc;
+            padding: 20px 25px;
+            border-radius: 12px;
+            border-left: 4px solid #0b69a3;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách trong HTML</h1>
+
+        <!-- Bước 2: Danh sách mua sắm không có thứ tự <ul> -->
+        <h2>🛒 Danh sách mua sắm</h2>
+        <ul>
+            <li>Sữa</li>
+            <li>Bánh mì</li>
+            <li>Trứng</li>
+            <li>Rau củ</li>
+        </ul>
+
+        <!-- Bước 3: Danh sách công việc có thứ tự <ol> -->
+        <h2>📋 Công việc cần làm</h2>
+        <ol>
+            <li>Dọn dẹp nhà cửa</li>
+            <li>Đi chợ</li>
+            <li>Viết báo cáo</li>
+            <li>Học lập trình HTML</li>
+        </ol>
+
+        <!-- Bước 6: Danh sách lồng nhau (Nested List) -->
+        <div class="nested-box">
+            <h2 style="margin-top: 0;">🗂️ Danh sách công việc theo thứ tự (Danh sách lồng nhau)</h2>
+            <ol>
+                <li>
+                    Dọn dẹp nhà cửa
+                    <ul>
+                        <li>Quét nhà</li>
+                        <li>Rửa chén</li>
+                        <li>Giặt đồ</li>
+                    </ul>
+                </li>
+                <li>Đi chợ</li>
+                <li>Viết báo cáo</li>
+                <li>Học lập trình HTML</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
