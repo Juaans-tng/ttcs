@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Form đơn giản - Phần 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .form-card {
+            background-color: #ffffff;
+            max-width: 520px;
+            width: 100%;
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e1e8ed;
+        }
+        h2 {
+            color: #1e3a8a;
+            margin-top: 0;
+            margin-bottom: 24px;
+            text-align: center;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label.form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        input[type="text"]:focus, input[type="email"]:focus {
+            border-color: #2563eb;
+            outline: none;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 6px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn-submit {
+            flex: 1;
+            background-color: #2563eb;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #1d4ed8;
+        }
+        .btn-reset {
+            flex: 1;
+            background-color: #f3f4f6;
+            color: #4b5563;
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-reset:hover {
+            background-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-card">
+        <h2>SỞ THÍCH CỦA BẠN</h2>
+        <form action="#" method="post">
+            <!-- TextBox nhập Họ và tên (yourname) -->
+            <div class="form-group">
+                <label class="form-label" for="yourname">Họ và tên</label>
+                <input type="text" id="yourname" name="yourname" placeholder="Nhập họ và tên..." required>
+            </div>
+
+            <!-- TextBox nhập Email (email) -->
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+            </div>
+
+            <!-- CheckBox sở thích (hobby) -->
+            <div class="form-group">
+                <label class="form-label">Sở thích</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item"><input type="checkbox" name="hobby" value="sports"> Thể thao</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobby" value="music"> Âm nhạc</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobby" value="reading"> Đọc sách</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobby" value="travel"> Du lịch</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobby" value="gaming"> Chơi game</label>
+                </div>
+            </div>
+
+            <!-- Nút submit và reset -->
+            <div class="btn-group">
+                <input type="submit" class="btn-submit" value="Gửi thông tin">
+                <input type="reset" class="btn-reset" value="Nhập lại">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

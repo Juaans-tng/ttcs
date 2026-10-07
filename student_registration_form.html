@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký Học Viên - CodeGym</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .form-card {
+            background-color: #ffffff;
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-header h2 {
+            color: #0f172a;
+            font-size: 26px;
+            margin: 0 0 8px 0;
+        }
+        .form-header p {
+            color: #64748b;
+            margin: 0;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label.form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #334155;
+            font-size: 15px;
+        }
+        label.form-label .required {
+            color: #ef4444;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+            font-family: inherit;
+            transition: all 0.2s;
+            background-color: #f8fafc;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #2563eb;
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 6px;
+        }
+        .radio-item, .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            user-select: none;
+        }
+        .radio-item input, .checkbox-item input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            margin-top: 35px;
+        }
+        .btn-submit {
+            flex: 2;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #1d4ed8;
+        }
+        .btn-reset {
+            flex: 1;
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-reset:hover {
+            background-color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-card">
+        <div class="form-header">
+            <h2>FORM ĐĂNG KÝ HỌC VIÊN</h2>
+            <p>Vui lòng điền đầy đủ thông tin bên dưới để hoàn tất đăng ký khóa học</p>
+        </div>
+
+        <form action="#" method="post">
+            <!-- Họ và tên -->
+            <div class="form-group">
+                <label class="form-label" for="fullname">Họ và tên <span class="required">*</span></label>
+                <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên học viên..." required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label class="form-label" for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="hocvien@codegym.vn" required>
+            </div>
+
+            <!-- Số điện thoại -->
+            <div class="form-group">
+                <label class="form-label" for="phone">Số điện thoại <span class="required">*</span></label>
+                <input type="text" id="phone" name="phone" placeholder="0987 654 321" required>
+            </div>
+
+            <!-- Ngày sinh -->
+            <div class="form-group">
+                <label class="form-label" for="birthday">Ngày sinh</label>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+
+            <!-- Giới tính -->
+            <div class="form-group">
+                <label class="form-label">Giới tính</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="gender" value="male" checked> Nam</label>
+                    <label class="radio-item"><input type="radio" name="gender" value="female"> Nữ</label>
+                    <label class="radio-item"><input type="radio" name="gender" value="other"> Khác</label>
+                </div>
+            </div>
+
+            <!-- Địa chỉ -->
+            <div class="form-group">
+                <label class="form-label" for="address">Địa chỉ</label>
+                <textarea id="address" name="address" placeholder="Nhập địa chỉ cư trú..."></textarea>
+            </div>
+
+            <!-- Khóa học -->
+            <div class="form-group">
+                <label class="form-label" for="course">Khóa học đăng ký</label>
+                <select id="course" name="course">
+                    <option value="HTML & CSS">HTML & CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                </select>
+            </div>
+
+            <!-- Hình thức học -->
+            <div class="form-group">
+                <label class="form-label">Hình thức học</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="study_type" value="online" checked> Online</label>
+                    <label class="radio-item"><input type="radio" name="study_type" value="offline"> Offline</label>
+                </div>
+            </div>
+
+            <!-- Sở thích -->
+            <div class="form-group">
+                <label class="form-label">Sở thích</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item"><input type="checkbox" name="hobby" value="code"> Lập trình</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobby" value="reading"> Đọc sách</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobby" value="sports"> Thể thao</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobby" value="music"> Âm nhạc</label>
+                </div>
+            </div>
+
+            <!-- Ghi chú -->
+            <div class="form-group">
+                <label class="form-label" for="note">Ghi chú</label>
+                <textarea id="note" name="note" placeholder="Nhập nguyện vọng hoặc ghi chú thêm..."></textarea>
+            </div>
+
+            <!-- Nút Đăng ký (Submit) và Nhập lại (Reset) -->
+            <div class="btn-group">
+                <input type="submit" class="btn-submit" value="Đăng ký">
+                <input type="reset" class="btn-reset" value="Nhập lại">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
