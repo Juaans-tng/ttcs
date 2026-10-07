@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Định dạng văn bản với HTML Styles</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .demo-card {
+            background-color: #ffffff;
+            max-width: 680px;
+            width: 100%;
+            padding: 35px 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+        ul {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-card">
+        <!-- Bước 2: Tiêu đề có màu xanh dương và căn giữa -->
+        <h1 style="color: blue; text-align: center;">HTML Text Formatting</h1>
+
+        <!-- Đoạn văn bản có cỡ chữ 18px -->
+        <p style="font-size: 18px;">HTML cho phép bạn định dạng văn bản một cách dễ dàng.</p>
+
+        <!-- Bước 3: Thẻ định dạng chữ đậm, nghiêng, gạch chân -->
+        <p><b>Chữ in đậm</b>, <i>chữ in nghiêng</i>, <u>chữ gạch chân</u>.</p>
+
+        <!-- Đoạn văn bản màu đỏ -->
+        <p style="color: red;">Đoạn văn bản này có màu đỏ.</p>
+
+        <!-- Bước 4: Văn bản căn giữa với font chữ Arial -->
+        <p style="text-align: center; font-family: Arial, sans-serif;">
+            Đây là một đoạn văn bản căn giữa với font chữ Arial.
+        </p>
+
+        <!-- Bước 5: Danh sách chữ màu xanh lá cây và in đậm -->
+        <ul style="color: green; font-weight: bold;">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+</body>
+</html>
