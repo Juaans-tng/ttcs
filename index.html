@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh Sách Sản Phẩm</title>
+    <title>Lịch Họp Công Ty</title>
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2563eb;
+            --primary: #2563eb;
             --primary-dark: #1d4ed8;
             --primary-light: #eff6ff;
-            --text-main: #0f172a;
+            --secondary: #0f172a;
+            --text-main: #1e293b;
             --text-muted: #64748b;
-            --border-color: #e2e8f0;
+            --border-color: #cbd5e1;
             --bg-page: #f8fafc;
             --card-bg: #ffffff;
-            --row-hover: #f1f7ff;
-            --price-color: #059669;
+            --row-hover: #f1f5f9;
+            --rowspan-bg: #f8fafc;
+            --colspan-bg: #fefce8;
+            --colspan-border: #fef08a;
+            --colspan-text: #854d0e;
         }
 
         * {
@@ -43,12 +47,12 @@
 
         .container {
             width: 100%;
-            max-width: 820px;
+            max-width: 860px;
             background: var(--card-bg);
             border-radius: 20px;
             box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(15, 23, 42, 0.05);
             padding: 36px 40px;
-            border: 1px solid var(--border-color);
+            border: 1px solid #e2e8f0;
         }
 
         .header-section {
@@ -62,32 +66,46 @@
             padding-bottom: 18px;
         }
 
-        /* Tiêu đề <h1> đúng chuẩn yêu cầu đề bài: "Danh sách sản phẩm" */
+        /* Tiêu đề <h1> theo đúng yêu cầu đề bài: "Lịch họp công ty" */
         h1 {
             font-size: 26px;
             font-weight: 700;
-            color: #0f172a;
+            color: var(--secondary);
             letter-spacing: -0.02em;
         }
 
-        .stat-badge {
-            background: var(--primary-light);
-            color: var(--primary-color);
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .badge {
             font-size: 13px;
             font-weight: 600;
             padding: 6px 14px;
             border-radius: 9999px;
-            border: 1px solid #bfdbfe;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+        }
+
+        .badge-primary {
+            background: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid #bfdbfe;
         }
 
         .table-responsive {
             overflow-x: auto;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
         }
 
         table {
@@ -95,7 +113,6 @@
             border-collapse: collapse;
             font-size: 15px;
             text-align: left;
-            border: 1px solid var(--border-color);
         }
 
         thead tr {
@@ -112,205 +129,276 @@
             border: 1px solid #334155;
         }
 
-        th.col-name {
-            width: 50%;
-        }
-
-        th.col-price {
-            width: 28%;
-            text-align: right;
-        }
-
-        th.col-qty {
-            width: 22%;
+        th.col-date {
+            width: 24%;
             text-align: center;
         }
 
-        tbody tr {
-            border-bottom: 1px solid var(--border-color);
-            transition: background-color 0.15s ease-in-out;
+        th.col-time {
+            width: 26%;
+            text-align: center;
         }
 
-        tbody tr:last-child {
-            border-bottom: none;
+        th.col-content {
+            width: 50%;
         }
 
-        tbody tr:nth-child(even) {
-            background-color: #fcfdfe;
+        td {
+            padding: 15px 20px;
+            vertical-align: middle;
+            border: 1px solid var(--border-color);
         }
 
         tbody tr:hover {
             background-color: var(--row-hover);
         }
 
-        td {
-            padding: 16px 20px;
-            vertical-align: middle;
-            border: 1px solid var(--border-color);
-        }
-
-        .product-name-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .product-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-            background: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex-shrink: 0;
-            border: 1px solid #e2e8f0;
-        }
-
-        .product-title {
+        /* Định dạng cột Ngày khi dùng rowspan */
+        td[rowspan] {
+            background-color: var(--rowspan-bg);
+            text-align: center;
             font-weight: 600;
-            color: #1e293b;
+            vertical-align: middle;
         }
 
-        .product-desc {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        td.price {
-            text-align: right;
-            font-weight: 700;
-            color: var(--price-color);
-            font-variant-numeric: tabular-nums;
-        }
-
-        td.quantity {
+        .cell-date {
             text-align: center;
         }
 
-        .qty-badge {
+        .date-title {
+            display: block;
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 15px;
+        }
+
+        .date-sub {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 3px;
+            font-weight: 400;
+        }
+
+        /* Định dạng cột Giờ */
+        .cell-time {
+            text-align: center;
+        }
+
+        .time-badge {
             display: inline-block;
-            min-width: 44px;
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 13px;
             background-color: #f1f5f9;
             color: #334155;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
             border: 1px solid #cbd5e1;
         }
 
-        .table-footer {
-            margin-top: 18px;
+        /* Định dạng ô gộp với colspan */
+        td[colspan] {
+            background: linear-gradient(90deg, #fef9c3 0%, #fef08a 100%);
+            border: 1px solid #eab308;
+            color: #713f12;
+            vertical-align: middle;
+        }
+
+        .all-day-banner {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-muted);
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .banner-tag {
+            display: inline-block;
+            background-color: #ca8a04;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            width: fit-content;
+        }
+
+        .meeting-title {
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.4;
+        }
+
+        .meeting-desc {
             font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        td[colspan] .meeting-title {
+            color: #713f12;
+            font-weight: 700;
+        }
+
+        td[colspan] .meeting-desc {
+            color: #854d0e;
+        }
+
+        /* Chú thích bảng */
+        .legend-box {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            display: flex;
             flex-wrap: wrap;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
             gap: 8px;
         }
 
-        .table-footer strong {
-            color: #0f172a;
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .dot-rowspan {
+            background-color: #cbd5e1;
+        }
+
+        .dot-colspan {
+            background-color: #eab308;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header-section">
-            <!-- Tiêu đề <h1> nội dung: "Danh sách sản phẩm" -->
-            <h1>Danh sách sản phẩm</h1>
-            <div class="stat-badge">
-                <span>Tổng cộng: 5 sản phẩm</span>
+            <div class="title-group">
+                <!-- Tiêu đề <h1> theo yêu cầu bài tập: "Lịch họp công ty" -->
+                <h1>Lịch họp công ty</h1>
+                <p class="subtitle">Lịch làm việc và các cuộc họp nội bộ trong tuần</p>
+            </div>
+            <div class="badge-group">
+                <span class="badge badge-primary">Tuần 43 / 2026</span>
             </div>
         </div>
 
         <div class="table-responsive">
-            <!-- Bảng chứa các cột: Tên sản phẩm, Giá, Số lượng -->
+            <!-- Bảng hiển thị thông tin lịch họp gồm các cột: Ngày, Giờ, Nội dung cuộc họp -->
             <table border="1">
                 <thead>
                     <tr>
-                        <th class="col-name">Tên sản phẩm</th>
-                        <th class="col-price">Giá</th>
-                        <th class="col-qty">Số lượng</th>
+                        <th class="col-date">Ngày</th>
+                        <th class="col-time">Giờ</th>
+                        <th class="col-content">Nội dung cuộc họp</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- THỨ HAI: 2 cuộc họp trong cùng một ngày -> Sử dụng rowspan="2" ở cột Ngày -->
                     <tr>
-                        <td>
-                            <div class="product-name-wrapper">
-                                <span class="product-icon">📱</span>
-                                <div>
-                                    <div class="product-title">iPhone 16 Pro Max 256GB</div>
-                                    <div class="product-desc">Titan Tự Nhiên - Chính hãng VN/A</div>
-                                </div>
-                            </div>
+                        <td rowspan="2" class="cell-date">
+                            <span class="date-title">Thứ Hai</span>
+                            <span class="date-sub">20/10/2026</span>
                         </td>
-                        <td class="price">34.990.000 ₫</td>
-                        <td class="quantity"><span class="qty-badge">15</span></td>
+                        <td class="cell-time"><span class="time-badge">08:30 - 10:00</span></td>
+                        <td>
+                            <div class="meeting-title">Họp giao ban đầu tuần</div>
+                            <div class="meeting-desc">Ban Giám đốc & các Trưởng bộ phận báo cáo tình hình hoạt động</div>
+                        </td>
                     </tr>
                     <tr>
+                        <td class="cell-time"><span class="time-badge">14:00 - 16:00</span></td>
                         <td>
-                            <div class="product-name-wrapper">
-                                <span class="product-icon">💻</span>
-                                <div>
-                                    <div class="product-title">MacBook Pro 14" M3 Pro</div>
-                                    <div class="product-desc">18GB RAM / 512GB SSD - Space Black</div>
-                                </div>
+                            <div class="meeting-title">Họp rà soát tiến độ dự án Q4</div>
+                            <div class="meeting-desc">Team Kỹ thuật (IT) và Quản lý dự án (PM)</div>
+                        </td>
+                    </tr>
+
+                    <!-- THỨ BA: 1 cuộc họp diễn ra bình thường -->
+                    <tr>
+                        <td class="cell-date">
+                            <span class="date-title">Thứ Ba</span>
+                            <span class="date-sub">21/10/2026</span>
+                        </td>
+                        <td class="cell-time"><span class="time-badge">09:00 - 10:30</span></td>
+                        <td>
+                            <div class="meeting-title">Phỏng vấn & đánh giá nhân sự mới</div>
+                            <div class="meeting-desc">Phòng Nhân sự và Trưởng bộ phận chuyên môn</div>
+                        </td>
+                    </tr>
+
+                    <!-- THỨ TƯ: Cuộc họp kéo dài nhiều giờ (nguyên ngày 08:00 - 17:00) -> Sử dụng colspan="2" để gộp cột Giờ và Nội dung -->
+                    <tr>
+                        <td class="cell-date">
+                            <span class="date-title">Thứ Tư</span>
+                            <span class="date-sub">22/10/2026</span>
+                        </td>
+                        <td colspan="2" class="cell-colspan">
+                            <div class="all-day-banner">
+                                <span class="banner-tag">Cuộc họp kéo dài nhiều giờ (08:00 - 17:00)</span>
+                                <div class="meeting-title">Hội thảo Chiến lược & Tập huấn Chuyển đổi số toàn công ty</div>
+                                <div class="meeting-desc">Cuộc họp toàn thể kéo dài cả ngày với chuyên gia tư vấn công nghệ</div>
                             </div>
                         </td>
-                        <td class="price">49.990.000 ₫</td>
-                        <td class="quantity"><span class="qty-badge">8</span></td>
+                    </tr>
+
+                    <!-- THỨ NĂM: 2 cuộc họp trong cùng một ngày -> Sử dụng rowspan="2" ở cột Ngày -->
+                    <tr>
+                        <td rowspan="2" class="cell-date">
+                            <span class="date-title">Thứ Năm</span>
+                            <span class="date-sub">23/10/2026</span>
+                        </td>
+                        <td class="cell-time"><span class="time-badge">09:30 - 11:30</span></td>
+                        <td>
+                            <div class="meeting-title">Họp duyệt thiết kế UI/UX & Kế hoạch Marketing</div>
+                            <div class="meeting-desc">Phòng Marketing phối hợp cùng Product Design</div>
+                        </td>
                     </tr>
                     <tr>
+                        <td class="cell-time"><span class="time-badge">15:00 - 16:30</span></td>
                         <td>
-                            <div class="product-name-wrapper">
-                                <span class="product-icon">🎧</span>
-                                <div>
-                                    <div class="product-title">Tai nghe Sony WH-1000XM5</div>
-                                    <div class="product-desc">Chống ồn chủ động không dây - Màu đen</div>
-                                </div>
-                            </div>
+                            <div class="meeting-title">Họp đối tác cung cấp dịch vụ hạ tầng Cloud</div>
+                            <div class="meeting-desc">Đại diện AWS và Ban Kỹ thuật hạ tầng</div>
                         </td>
-                        <td class="price">6.890.000 ₫</td>
-                        <td class="quantity"><span class="qty-badge">24</span></td>
                     </tr>
+
+                    <!-- THỨ SÁU: Cuộc họp kéo dài nhiều giờ (buổi chiều 13:30 - 17:30) -> Sử dụng colspan="2" để gộp cột Giờ và Nội dung -->
                     <tr>
-                        <td>
-                            <div class="product-name-wrapper">
-                                <span class="product-icon">⌚</span>
-                                <div>
-                                    <div class="product-title">Apple Watch Ultra 2 GPS + Cellular</div>
-                                    <div class="product-desc">Titanium Case 49mm - Dây Trail Loop</div>
-                                </div>
+                        <td class="cell-date">
+                            <span class="date-title">Thứ Sáu</span>
+                            <span class="date-sub">24/10/2026</span>
+                        </td>
+                        <td colspan="2" class="cell-colspan">
+                            <div class="all-day-banner">
+                                <span class="banner-tag">Cuộc họp kéo dài nhiều giờ (13:30 - 17:30)</span>
+                                <div class="meeting-title">Tổng kết tuần, Đánh giá KPI & Vinh danh nhân viên xuất sắc</div>
+                                <div class="meeting-desc">Toàn thể cán bộ nhân viên tham dự tại Hội trường chính</div>
                             </div>
                         </td>
-                        <td class="price">21.490.000 ₫</td>
-                        <td class="quantity"><span class="qty-badge">10</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="product-name-wrapper">
-                                <span class="product-icon">⌨️</span>
-                                <div>
-                                    <div class="product-title">Bàn phím cơ Keychron Q1 Pro</div>
-                                    <div class="product-desc">Wireless Custom Mechanical Keyboard RGB</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="price">4.290.000 ₫</td>
-                        <td class="quantity"><span class="qty-badge">30</span></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="table-footer">
-            <span>Hiển thị 5 / 5 sản phẩm khả dụng</span>
-            <span>Tổng tồn kho: <strong>87</strong> sản phẩm</span>
+        <!-- Chú thích kỹ thuật gộp ô theo đề bài -->
+        <div class="legend-box">
+            <div class="legend-item">
+                <div class="legend-dot dot-rowspan"></div>
+                <span><strong>rowspan="2"</strong>: Gộp ô cột Ngày khi có 2 cuộc họp trong ngày (Thứ Hai, Thứ Năm)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot dot-colspan"></div>
+                <span><strong>colspan="2"</strong>: Gộp ô cột Giờ và Nội dung khi cuộc họp kéo dài nhiều giờ (Thứ Tư, Thứ Sáu)</span>
+            </div>
         </div>
     </div>
 </body>

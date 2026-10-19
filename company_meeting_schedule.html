@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Họp Công Ty</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --secondary: #0f172a;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --bg-page: #f8fafc;
+            --card-bg: #ffffff;
+            --row-hover: #f1f5f9;
+            --rowspan-bg: #f8fafc;
+            --colspan-bg: #fefce8;
+            --colspan-border: #fef08a;
+            --colspan-text: #854d0e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
+            background-size: 24px 24px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 860px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(15, 23, 42, 0.05);
+            padding: 36px 40px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .header-section {
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 18px;
+        }
+
+        /* Tiêu đề <h1> theo đúng yêu cầu đề bài: "Lịch họp công ty" */
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--secondary);
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .badge {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .badge-primary {
+            background: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid #bfdbfe;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        thead tr {
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+        }
+
+        th {
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            border: 1px solid #334155;
+        }
+
+        th.col-date {
+            width: 24%;
+            text-align: center;
+        }
+
+        th.col-time {
+            width: 26%;
+            text-align: center;
+        }
+
+        th.col-content {
+            width: 50%;
+        }
+
+        td {
+            padding: 15px 20px;
+            vertical-align: middle;
+            border: 1px solid var(--border-color);
+        }
+
+        tbody tr:hover {
+            background-color: var(--row-hover);
+        }
+
+        /* Định dạng cột Ngày khi dùng rowspan */
+        td[rowspan] {
+            background-color: var(--rowspan-bg);
+            text-align: center;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        .cell-date {
+            text-align: center;
+        }
+
+        .date-title {
+            display: block;
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 15px;
+        }
+
+        .date-sub {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 3px;
+            font-weight: 400;
+        }
+
+        /* Định dạng cột Giờ */
+        .cell-time {
+            text-align: center;
+        }
+
+        .time-badge {
+            display: inline-block;
+            background-color: #f1f5f9;
+            color: #334155;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* Định dạng ô gộp với colspan */
+        td[colspan] {
+            background: linear-gradient(90deg, #fef9c3 0%, #fef08a 100%);
+            border: 1px solid #eab308;
+            color: #713f12;
+            vertical-align: middle;
+        }
+
+        .all-day-banner {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .banner-tag {
+            display: inline-block;
+            background-color: #ca8a04;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            width: fit-content;
+        }
+
+        .meeting-title {
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.4;
+        }
+
+        .meeting-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        td[colspan] .meeting-title {
+            color: #713f12;
+            font-weight: 700;
+        }
+
+        td[colspan] .meeting-desc {
+            color: #854d0e;
+        }
+
+        /* Chú thích bảng */
+        .legend-box {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .dot-rowspan {
+            background-color: #cbd5e1;
+        }
+
+        .dot-colspan {
+            background-color: #eab308;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <div class="title-group">
+                <!-- Tiêu đề <h1> theo yêu cầu bài tập: "Lịch họp công ty" -->
+                <h1>Lịch họp công ty</h1>
+                <p class="subtitle">Lịch làm việc và các cuộc họp nội bộ trong tuần</p>
+            </div>
+            <div class="badge-group">
+                <span class="badge badge-primary">Tuần 43 / 2026</span>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <!-- Bảng hiển thị thông tin lịch họp gồm các cột: Ngày, Giờ, Nội dung cuộc họp -->
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th class="col-date">Ngày</th>
+                        <th class="col-time">Giờ</th>
+                        <th class="col-content">Nội dung cuộc họp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- THỨ HAI: 2 cuộc họp trong cùng một ngày -> Sử dụng rowspan="2" ở cột Ngày -->
+                    <tr>
+                        <td rowspan="2" class="cell-date">
+                            <span class="date-title">Thứ Hai</span>
+                            <span class="date-sub">20/10/2026</span>
+                        </td>
+                        <td class="cell-time"><span class="time-badge">08:30 - 10:00</span></td>
+                        <td>
+                            <div class="meeting-title">Họp giao ban đầu tuần</div>
+                            <div class="meeting-desc">Ban Giám đốc & các Trưởng bộ phận báo cáo tình hình hoạt động</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cell-time"><span class="time-badge">14:00 - 16:00</span></td>
+                        <td>
+                            <div class="meeting-title">Họp rà soát tiến độ dự án Q4</div>
+                            <div class="meeting-desc">Team Kỹ thuật (IT) và Quản lý dự án (PM)</div>
+                        </td>
+                    </tr>
+
+                    <!-- THỨ BA: 1 cuộc họp diễn ra bình thường -->
+                    <tr>
+                        <td class="cell-date">
+                            <span class="date-title">Thứ Ba</span>
+                            <span class="date-sub">21/10/2026</span>
+                        </td>
+                        <td class="cell-time"><span class="time-badge">09:00 - 10:30</span></td>
+                        <td>
+                            <div class="meeting-title">Phỏng vấn & đánh giá nhân sự mới</div>
+                            <div class="meeting-desc">Phòng Nhân sự và Trưởng bộ phận chuyên môn</div>
+                        </td>
+                    </tr>
+
+                    <!-- THỨ TƯ: Cuộc họp kéo dài nhiều giờ (nguyên ngày 08:00 - 17:00) -> Sử dụng colspan="2" để gộp cột Giờ và Nội dung -->
+                    <tr>
+                        <td class="cell-date">
+                            <span class="date-title">Thứ Tư</span>
+                            <span class="date-sub">22/10/2026</span>
+                        </td>
+                        <td colspan="2" class="cell-colspan">
+                            <div class="all-day-banner">
+                                <span class="banner-tag">Cuộc họp kéo dài nhiều giờ (08:00 - 17:00)</span>
+                                <div class="meeting-title">Hội thảo Chiến lược & Tập huấn Chuyển đổi số toàn công ty</div>
+                                <div class="meeting-desc">Cuộc họp toàn thể kéo dài cả ngày với chuyên gia tư vấn công nghệ</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- THỨ NĂM: 2 cuộc họp trong cùng một ngày -> Sử dụng rowspan="2" ở cột Ngày -->
+                    <tr>
+                        <td rowspan="2" class="cell-date">
+                            <span class="date-title">Thứ Năm</span>
+                            <span class="date-sub">23/10/2026</span>
+                        </td>
+                        <td class="cell-time"><span class="time-badge">09:30 - 11:30</span></td>
+                        <td>
+                            <div class="meeting-title">Họp duyệt thiết kế UI/UX & Kế hoạch Marketing</div>
+                            <div class="meeting-desc">Phòng Marketing phối hợp cùng Product Design</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cell-time"><span class="time-badge">15:00 - 16:30</span></td>
+                        <td>
+                            <div class="meeting-title">Họp đối tác cung cấp dịch vụ hạ tầng Cloud</div>
+                            <div class="meeting-desc">Đại diện AWS và Ban Kỹ thuật hạ tầng</div>
+                        </td>
+                    </tr>
+
+                    <!-- THỨ SÁU: Cuộc họp kéo dài nhiều giờ (buổi chiều 13:30 - 17:30) -> Sử dụng colspan="2" để gộp cột Giờ và Nội dung -->
+                    <tr>
+                        <td class="cell-date">
+                            <span class="date-title">Thứ Sáu</span>
+                            <span class="date-sub">24/10/2026</span>
+                        </td>
+                        <td colspan="2" class="cell-colspan">
+                            <div class="all-day-banner">
+                                <span class="banner-tag">Cuộc họp kéo dài nhiều giờ (13:30 - 17:30)</span>
+                                <div class="meeting-title">Tổng kết tuần, Đánh giá KPI & Vinh danh nhân viên xuất sắc</div>
+                                <div class="meeting-desc">Toàn thể cán bộ nhân viên tham dự tại Hội trường chính</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Chú thích kỹ thuật gộp ô theo đề bài -->
+        <div class="legend-box">
+            <div class="legend-item">
+                <div class="legend-dot dot-rowspan"></div>
+                <span><strong>rowspan="2"</strong>: Gộp ô cột Ngày khi có 2 cuộc họp trong ngày (Thứ Hai, Thứ Năm)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot dot-colspan"></div>
+                <span><strong>colspan="2"</strong>: Gộp ô cột Giờ và Nội dung khi cuộc họp kéo dài nhiều giờ (Thứ Tư, Thứ Sáu)</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
