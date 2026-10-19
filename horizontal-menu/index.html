@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu dropdown ngang</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        #menu {
+            height: 40px;
+            margin: 20px;
+            padding: 0;
+            border: 1px solid #333;
+            background-color: black;
+        }
+        #menu ul, #menu li { margin: 0; padding: 0; list-style: none; }
+        #menu li { position: relative; }
+        #menu > ul { display: flex; }
+        #menu a {
+            display: block;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: black;
+        }
+        #menu a:hover, #menu a:focus-visible { background-color: red; }
+        #menu ul ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            visibility: hidden;
+            z-index: 1;
+        }
+        #menu li:hover > ul, #menu li:focus-within > ul { visibility: visible; }
+    </style>
+</head>
+<body>
+    <nav id="menu" aria-label="Menu chính">
+        <ul>
+            <li><a href="#home">Trang chủ</a></li>
+            <li>
+                <a href="#courses">Khóa học ▾</a>
+                <ul>
+                    <li><a href="#html">HTML</a></li>
+                    <li><a href="#css">CSS</a></li>
+                    <li><a href="#javascript">JavaScript</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#services">Dịch vụ ▾</a>
+                <ul>
+                    <li><a href="#design">Thiết kế web</a></li>
+                    <li><a href="#consulting">Tư vấn</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
