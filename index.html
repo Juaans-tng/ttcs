@@ -1,298 +1,317 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market Research Survey - Khảo Sát Khách Hàng</title>
+    <title>Danh Sách Sản Phẩm</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --bg-page: #f8fafc;
+            --card-bg: #ffffff;
+            --row-hover: #f1f7ff;
+            --price-color: #059669;
+        }
+
         * {
             box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f3f4f6;
-            color: #1f2937;
             margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .survey-container {
-            background-color: #ffffff;
-            max-width: 680px;
-            width: 100%;
-            padding: 40px 45px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e5e7eb;
-        }
-        .survey-header {
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        .survey-header h2 {
-            font-size: 26px;
-            color: #1e3a8a;
-            margin: 0 0 10px 0;
-        }
-        .survey-header p {
-            color: #4b5563;
-            margin: 0;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        .form-group {
-            margin-bottom: 28px;
-        }
-        .field-label {
-            display: block;
-            font-weight: 600;
-            font-size: 15px;
-            color: #111827;
-            margin-bottom: 10px;
-        }
-        select, textarea, input[type="text"] {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 15px;
-            font-family: inherit;
-            background-color: #f9fafb;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        select:focus, textarea:focus, input[type="text"]:focus {
-            border-color: #2563eb;
-            background-color: #ffffff;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-        }
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        .options-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .option-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            font-size: 15px;
-            color: #374151;
-        }
-        .option-item input[type="radio"],
-        .option-item input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: #2563eb;
-            cursor: pointer;
-        }
-        .other-input {
-            margin-top: 6px;
-            margin-left: 28px;
-            width: calc(100% - 28px);
-        }
-        .price-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .currency-symbol {
-            font-weight: bold;
-            font-size: 18px;
-            color: #374151;
-        }
-        .price-input-dollars {
-            width: 120px !important;
-        }
-        .price-input-cents {
-            width: 70px !important;
+            padding: 0;
         }
 
-        /* Likert Rating Table */
-        .likert-table {
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
+            background-size: 24px 24px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 820px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(15, 23, 42, 0.05);
+            padding: 36px 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .header-section {
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 18px;
+        }
+
+        /* Tiêu đề <h1> đúng chuẩn yêu cầu đề bài: "Danh sách sản phẩm" */
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-badge {
+            background: var(--primary-light);
+            color: var(--primary-color);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            border: 1px solid #bfdbfe;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+        }
+
+        table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
-        }
-        .likert-table th, .likert-table td {
-            padding: 12px 10px;
-            text-align: center;
-            border: 1px solid #e5e7eb;
-        }
-        .likert-table thead th {
-            background-color: #f3f4f6;
-            color: #374151;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        .likert-table tbody th {
+            font-size: 15px;
             text-align: left;
-            font-weight: normal;
-            font-size: 14px;
-            background-color: #ffffff;
-            color: #1f2937;
-        }
-        .likert-table tbody tr:nth-child(even) {
-            background-color: #f9fafb;
-        }
-        .likert-table tbody tr:nth-child(even) th {
-            background-color: #f9fafb;
-        }
-        .likert-table input[type="radio"] {
-            accent-color: #2563eb;
-            cursor: pointer;
-            width: 18px;
-            height: 18px;
+            border: 1px solid var(--border-color);
         }
 
-        .btn-submit {
-            background-color: #2563eb;
+        thead tr {
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 20px;
         }
-        .btn-submit:hover {
-            background-color: #1d4ed8;
+
+        th {
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            border: 1px solid #334155;
+        }
+
+        th.col-name {
+            width: 50%;
+        }
+
+        th.col-price {
+            width: 28%;
+            text-align: right;
+        }
+
+        th.col-qty {
+            width: 22%;
+            text-align: center;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fcfdfe;
+        }
+
+        tbody tr:hover {
+            background-color: var(--row-hover);
+        }
+
+        td {
+            padding: 16px 20px;
+            vertical-align: middle;
+            border: 1px solid var(--border-color);
+        }
+
+        .product-name-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .product-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .product-title {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .product-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        td.price {
+            text-align: right;
+            font-weight: 700;
+            color: var(--price-color);
+            font-variant-numeric: tabular-nums;
+        }
+
+        td.quantity {
+            text-align: center;
+        }
+
+        .qty-badge {
+            display: inline-block;
+            min-width: 44px;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            background-color: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+
+        .table-footer {
+            margin-top: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .table-footer strong {
+            color: #0f172a;
         }
     </style>
 </head>
 <body>
-
-    <div class="survey-container">
-        <div class="survey-header">
-            <h2>Market Research Survey</h2>
-            <p>Please take a few moments to complete this satisfaction survey.</p>
+    <div class="container">
+        <div class="header-section">
+            <!-- Tiêu đề <h1> nội dung: "Danh sách sản phẩm" -->
+            <h1>Danh sách sản phẩm</h1>
+            <div class="stat-badge">
+                <span>Tổng cộng: 5 sản phẩm</span>
+            </div>
         </div>
 
-        <form action="#" method="post">
+        <div class="table-responsive">
+            <!-- Bảng chứa các cột: Tên sản phẩm, Giá, Số lượng -->
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th class="col-name">Tên sản phẩm</th>
+                        <th class="col-price">Giá</th>
+                        <th class="col-qty">Số lượng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="product-name-wrapper">
+                                <span class="product-icon">📱</span>
+                                <div>
+                                    <div class="product-title">iPhone 16 Pro Max 256GB</div>
+                                    <div class="product-desc">Titan Tự Nhiên - Chính hãng VN/A</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="price">34.990.000 ₫</td>
+                        <td class="quantity"><span class="qty-badge">15</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-name-wrapper">
+                                <span class="product-icon">💻</span>
+                                <div>
+                                    <div class="product-title">MacBook Pro 14" M3 Pro</div>
+                                    <div class="product-desc">18GB RAM / 512GB SSD - Space Black</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="price">49.990.000 ₫</td>
+                        <td class="quantity"><span class="qty-badge">8</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-name-wrapper">
+                                <span class="product-icon">🎧</span>
+                                <div>
+                                    <div class="product-title">Tai nghe Sony WH-1000XM5</div>
+                                    <div class="product-desc">Chống ồn chủ động không dây - Màu đen</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="price">6.890.000 ₫</td>
+                        <td class="quantity"><span class="qty-badge">24</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-name-wrapper">
+                                <span class="product-icon">⌚</span>
+                                <div>
+                                    <div class="product-title">Apple Watch Ultra 2 GPS + Cellular</div>
+                                    <div class="product-desc">Titanium Case 49mm - Dây Trail Loop</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="price">21.490.000 ₫</td>
+                        <td class="quantity"><span class="qty-badge">10</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-name-wrapper">
+                                <span class="product-icon">⌨️</span>
+                                <div>
+                                    <div class="product-title">Bàn phím cơ Keychron Q1 Pro</div>
+                                    <div class="product-desc">Wireless Custom Mechanical Keyboard RGB</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="price">4.290.000 ₫</td>
+                        <td class="quantity"><span class="qty-badge">30</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <!-- Q1: Age range -->
-            <div class="form-group">
-                <label class="field-label" for="age">What is your age range?</label>
-                <select id="age" name="age">
-                    <option value="18-24">18-24</option>
-                    <option value="25-34">25-34</option>
-                    <option value="35-50">35-50</option>
-                    <option value="50+">50+</option>
-                </select>
-            </div>
-
-            <!-- Q2: Income range -->
-            <div class="form-group">
-                <label class="field-label" for="income">What is your yearly income range?</label>
-                <select id="income" name="income">
-                    <option value="$0 - $25,000">$0 - $25,000</option>
-                    <option value="$25,001 - $50,000">$25,001 - $50,000</option>
-                    <option value="$50,001 - $100,000">$50,001 - $100,000</option>
-                    <option value="$100,000+">$100,000+</option>
-                </select>
-            </div>
-
-            <!-- Q3: Gender Identity -->
-            <div class="form-group">
-                <label class="field-label">Gender Identity</label>
-                <div class="options-list">
-                    <label class="option-item"><input type="radio" name="gender" value="Male"> Male</label>
-                    <label class="option-item"><input type="radio" name="gender" value="Female"> Female</label>
-                    <label class="option-item"><input type="radio" name="gender" value="Nonbinary"> Nonbinary</label>
-                    <label class="option-item"><input type="radio" name="gender" value="Other"> Other</label>
-                    <input type="text" class="other-input" name="gender_other" placeholder="Please specify if Other...">
-                </div>
-            </div>
-
-            <!-- Q4: Products Purchased -->
-            <div class="form-group">
-                <label class="field-label">Which of the following products have you purchased in the last 2 months. Please check all that apply.</label>
-                <div class="options-list">
-                    <label class="option-item"><input type="checkbox" name="products[]" value="Product 1"> Product 1</label>
-                    <label class="option-item"><input type="checkbox" name="products[]" value="Product 2"> Product 2</label>
-                    <label class="option-item"><input type="checkbox" name="products[]" value="Product 3"> Product 3</label>
-                </div>
-            </div>
-
-            <!-- Q5: Usage Frequency -->
-            <div class="form-group">
-                <label class="field-label">How often would you use our new product?</label>
-                <div class="options-list">
-                    <label class="option-item"><input type="radio" name="frequency" value="Daily"> Daily</label>
-                    <label class="option-item"><input type="radio" name="frequency" value="Weekly"> Weekly</label>
-                    <label class="option-item"><input type="radio" name="frequency" value="Monthly"> Monthly</label>
-                </div>
-            </div>
-
-            <!-- Q6: Expected Price -->
-            <div class="form-group">
-                <label class="field-label">What would you pay for the new product?</label>
-                <div class="price-group">
-                    <span class="currency-symbol">$</span>
-                    <input type="text" class="price-input-dollars" name="dollars" placeholder="Dollars">
-                    <span class="currency-symbol">.</span>
-                    <input type="text" class="price-input-cents" name="cents" placeholder="Cents" maxlength="2">
-                </div>
-            </div>
-
-            <!-- Q7: Features Request -->
-            <div class="form-group">
-                <label class="field-label" for="features">What features would you like to see in the new product.</label>
-                <textarea id="features" name="features" placeholder="Type your ideas and requested features here..."></textarea>
-            </div>
-
-            <!-- Q8: Likert Rating Scale Table -->
-            <div class="form-group">
-                <label class="field-label">Please rate your level of agreement with the following statements.</label>
-                <table class="likert-table">
-                    <thead>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>Strongly Disagree</th>
-                            <th>Disagree</th>
-                            <th>Agree</th>
-                            <th>Strongly Agree</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Our products are priced fairly.</th>
-                            <td><input type="radio" name="rating_price" value="Strongly Disagree"></td>
-                            <td><input type="radio" name="rating_price" value="Disagree"></td>
-                            <td><input type="radio" name="rating_price" value="Agree"></td>
-                            <td><input type="radio" name="rating_price" value="Strongly Agree"></td>
-                        </tr>
-                        <tr>
-                            <th>Our products are high quality.</th>
-                            <td><input type="radio" name="rating_quality" value="Strongly Disagree"></td>
-                            <td><input type="radio" name="rating_quality" value="Disagree"></td>
-                            <td><input type="radio" name="rating_quality" value="Agree"></td>
-                            <td><input type="radio" name="rating_quality" value="Strongly Agree"></td>
-                        </tr>
-                        <tr>
-                            <th>You would recommend our product to a friend or coworker.</th>
-                            <td><input type="radio" name="rating_recommend" value="Strongly Disagree"></td>
-                            <td><input type="radio" name="rating_recommend" value="Disagree"></td>
-                            <td><input type="radio" name="rating_recommend" value="Agree"></td>
-                            <td><input type="radio" name="rating_recommend" value="Strongly Agree"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn-submit">Submit</button>
-
-        </form>
+        <div class="table-footer">
+            <span>Hiển thị 5 / 5 sản phẩm khả dụng</span>
+            <span>Tổng tồn kho: <strong>87</strong> sản phẩm</span>
+        </div>
     </div>
-
 </body>
 </html>
