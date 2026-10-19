@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập - Tạo layout với các thẻ HTML5 và CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Khung bao bọc trang web -->
+    <div class="site-wrapper">
+        <!-- 1. Thẻ <header>: Phần đầu trang chứa tiêu đề và giới thiệu -->
+        <header>
+            <div class="header-inner">
+                <h1>CỔNG THÔNG TIN LẬP TRÌNH & CÔNG NGHỆ</h1>
+                <p>Nền tảng học lập trình thực chiến theo chuẩn nghề nghiệp</p>
+            </div>
+        </header>
+
+        <!-- 2. Thẻ <nav>: Thanh điều hướng chính của trang -->
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Trang Chủ</a></li>
+                <li><a href="#tutorials">Tài Liệu HTML5</a></li>
+                <li><a href="#courses">Khóa Học</a></li>
+                <li><a href="#news">Tin Tức Công Nghệ</a></li>
+                <li><a href="#forum">Diễn Đàn</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+
+        <!-- Khu vực thân trang: chia cột section và aside -->
+        <div class="content-container">
+            <!-- 3. Thẻ <section>: Khu vực nội dung bài viết chính -->
+            <section class="content-section">
+                <!-- 4. Thẻ <article>: Bài viết độc lập số 1 -->
+                <article class="post">
+                    <h2>Tìm hiểu các thẻ ngữ nghĩa HTML5 Semantic Elements</h2>
+                    <div class="post-meta">
+                        <span>Tác giả: <strong>Ban Chuyên Môn CodeGym</strong></span> • 
+                        <span>Ngày đăng: <strong>19/10/2026</strong></span> • 
+                        <span>Chuyên mục: <strong>Frontend Development</strong></span>
+                    </div>
+                    <p>
+                        Trước phiên bản HTML5, các nhà phát triển web thường sử dụng các thẻ <code>&lt;div&gt;</code> với thuộc tính <code>id</code> hoặc <code>class</code> để chia vùng trang web (ví dụ: <code>&lt;div id="header"&gt;</code>, <code>&lt;div id="nav"&gt;</code>, <code>&lt;div id="footer"&gt;</code>).
+                    </p>
+                    <p>
+                        Với sự ra đời của HTML5, các thẻ ngữ nghĩa (Semantic Elements) như <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, và <code>&lt;footer&gt;</code> giúp cấu trúc website trở nên sáng sủa hơn, tối ưu cho các công cụ tìm kiếm (SEO) và hỗ trợ các thiết bị trợ thính, đọc màn hình.
+                    </p>
+                </article>
+
+                <!-- Thẻ <article>: Bài viết độc lập số 2 -->
+                <article class="post">
+                    <h2>So sánh bố cục bằng Float vs Flexbox trong thiết kế Web</h2>
+                    <div class="post-meta">
+                        <span>Tác giả: <strong>Nguyễn Văn A</strong></span> • 
+                        <span>Ngày đăng: <strong>18/10/2026</strong></span> • 
+                        <span>Chuyên mục: <strong>CSS3 Kỹ Thuật</strong></span>
+                    </div>
+                    <p>
+                        Thuộc tính <code>float</code> ban đầu được thiết kế để đẩy hình ảnh sang bên trái hoặc phải nhằm cho văn bản bao quanh. Khi dùng float để chia cột bố cục, ta luôn phải dùng <code>clear</code> (hoặc Clearfix) để tránh hiện tượng sụp đổ chiều cao của container cha.
+                    </p>
+                    <p>
+                        Ngày nay, các kỹ thuật hiện đại như <strong>CSS Flexbox</strong> và <strong>CSS Grid</strong> đã trở thành tiêu chuẩn vượt trội, giúp việc dàn layout đa chiều và Responsive trên mọi kích thước màn hình trở nên đơn giản, trực quan hơn rất nhiều.
+                    </p>
+                </article>
+            </section>
+
+            <!-- 5. Thẻ <aside>: Khu vực thông tin bên lề (Sidebar) -->
+            <aside class="sidebar">
+                <div class="sidebar-box">
+                    <h3>Khóa Học Tiêu Biểu</h3>
+                    <ul class="course-list">
+                        <li><a href="#">Lập trình Web Front-end Chuyên Sâu</a></li>
+                        <li><a href="#">Java Web Fullstack Chuyên Nghiệp</a></li>
+                        <li><a href="#">Python Data Science & AI</a></li>
+                        <li><a href="#">Cơ sở dữ liệu & SQL nâng cao</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-box info-widget">
+                    <h3>Thông Báo Tuyển Sinh</h3>
+                    <p>
+                        Lớp học mới khai giảng vào đầu tháng tới. Học viên hoàn thành các bài thực hành trên hệ thống sẽ được cấp chứng chỉ hoàn thành từ CodeGym.
+                    </p>
+                    <a href="#register" class="btn-register">Xem chi tiết &rarr;</a>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 6. Thẻ <footer>: Phần chân trang hiển thị bản quyền và liên hệ -->
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 CodeGym. Bản quyền thuộc về Cổng thông tin công nghệ. Mọi quyền được bảo lưu.</p>
+                <p>Website được xây dựng theo chuẩn cấu trúc HTML5 Semantic &amp; CSS3 Hiện Đại.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+/* =========================================================
+   BÀI TẬP: TẠO LAYOUT VỚI CÁC THẺ HTML5 VÀ CSS
+   Bao gồm các thẻ: header, nav, section, article, aside, footer
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f1f5f9;
+    color: #334155;
+    padding: 20px 10px;
+}
+
+/* Khung bao bọc trang web */
+.site-wrapper {
+    max-width: 1040px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+/* 1. THẺ HEADER */
+header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 35px 24px;
+    text-align: center;
+}
+
+.header-inner h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.header-inner p {
+    font-size: 1rem;
+    color: #e0f2fe;
+    font-weight: 400;
+}
+
+/* 2. THẺ NAV */
+nav {
+    background-color: #0f172a;
+    border-bottom: 3px solid #2563eb;
+    padding: 0 16px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 14px 18px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/* 3. KHU VỰC THÂN TRANG (SECTION & ASIDE) */
+.content-container {
+    display: flex;
+    gap: 24px;
+    padding: 28px 24px;
+    align-items: flex-start;
+}
+
+/* THẺ SECTION */
+.content-section {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 4. THẺ ARTICLE */
+.post {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.post h2 {
+    color: #1e3a8a;
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.post-meta {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #cbd5e1;
+}
+
+.post p {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.post p code {
+    background-color: #e2e8f0;
+    color: #d97706;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 0.9em;
+}
+
+/* 5. THẺ ASIDE (SIDEBAR) */
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.sidebar-box h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #2563eb;
+}
+
+.course-list {
+    list-style: none;
+}
+
+.course-list li {
+    margin-bottom: 10px;
+}
+
+.course-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.92rem;
+    display: block;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.course-list a:hover {
+    color: #1d4ed8;
+    transform: translateX(4px);
+    text-decoration: underline;
+}
+
+.info-widget {
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+}
+
+.info-widget p {
+    font-size: 0.88rem;
+    color: #1e40af;
+    margin-bottom: 12px;
+}
+
+.btn-register {
+    display: inline-block;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-register:hover {
+    background-color: #1d4ed8;
+}
+
+/* 6. THẺ FOOTER */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 24px 20px;
+    border-top: 1px solid #334155;
+}
+
+.footer-content p {
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+}
+
+/* RESPONSIVE DESIGN (CHO ĐIỆN THOẠI & TABLET) */
+@media screen and (max-width: 820px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .nav-menu {
+        justify-content: center;
+    }
+}

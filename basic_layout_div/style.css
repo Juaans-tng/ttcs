@@ -1,0 +1,203 @@
+/* =========================================================
+   THỰC HÀNH: TẠO BỐ CỤC CƠ BẢN VỚI THẺ DIV VÀ CSS FLOAT
+   Bao gồm các vùng: #main, #head, #head-link, #left, #content, #right, #footer
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+/* 1. Bộ chọn body cố định font chữ cho cả trang */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #e2e8f0;
+    line-height: 1.5;
+}
+
+/* 2. Bộ chọn #main cố định độ rộng và căn giữa màn hình */
+#main {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 3. Bộ chọn #head xác định chiều cao, màu nền, đường viền và khoảng cách */
+#head {
+    height: 100px;
+    background-color: #2563eb;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 2px solid #1d4ed8;
+    margin-bottom: 5px;
+}
+
+#head h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+/* 4. Bộ chọn #head-link xác định vùng đặt các liên kết đầu trang */
+#head-link {
+    background-color: #1e293b;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+#head-link ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+#head-link a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+#head-link a:hover {
+    color: #38bdf8;
+}
+
+/* 5. Bộ chọn #left xác định vùng bên trái (rộng 200px, min-height 400px, float: left) */
+#left {
+    width: 200px;
+    min-height: 400px;
+    float: left;
+    background-color: #f1f5f9;
+    padding: 15px;
+    border-right: 1px solid #cbd5e1;
+}
+
+#left h3 {
+    margin-top: 0;
+    color: #1e293b;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+#left ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+#left li {
+    margin-bottom: 8px;
+}
+
+#left a {
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    padding: 4px 0;
+}
+
+#left a:hover {
+    color: #2563eb;
+    font-weight: bold;
+    padding-left: 4px;
+}
+
+/* 6. Bộ chọn #content xác định vùng nội dung chính ở giữa */
+#content {
+    width: 538px;
+    min-height: 400px;
+    float: left;
+    padding: 15px 20px;
+}
+
+#content h2 {
+    margin-top: 0;
+    color: #1e3a8a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.news-item {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+}
+
+.news-item h3 {
+    margin-top: 0;
+    margin-bottom: 6px;
+    color: #2563eb;
+    font-size: 1.05rem;
+}
+
+.news-item p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.92rem;
+}
+
+/* 7. Bộ chọn #right xác định vùng thông tin bên phải */
+#right {
+    width: 220px;
+    min-height: 400px;
+    float: right;
+    background-color: #f8fafc;
+    padding: 15px;
+    border-left: 1px solid #cbd5e1;
+}
+
+#right h3 {
+    margin-top: 0;
+    color: #1e293b;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+.widget {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+}
+
+.widget h4 {
+    margin-top: 0;
+    margin-bottom: 6px;
+    color: #0f172a;
+    font-size: 0.95rem;
+}
+
+.widget p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.88rem;
+}
+
+/* 8. Bộ chọn #footer xác định phân vùng chân trang với clear: both */
+#footer {
+    clear: both;
+    background-color: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.88rem;
+    border-top: 2px solid #cbd5e1;
+}
+
+#footer p {
+    margin: 0;
+}

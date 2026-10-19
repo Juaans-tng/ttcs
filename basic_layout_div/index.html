@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành - Tạo bố cục cơ bản với thẻ DIV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Phân vùng chứa toàn bộ nội dung của trang -->
+    <div id="main">
+        <!-- Phân vùng chứa nội dung đầu tiên: logo và banner -->
+        <div id="head">
+            <h1>LOGO & BANNER</h1>
+        </div>
+
+        <!-- Phân vùng chứa các liên kết đầu trang -->
+        <div id="head-link">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Students</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Phân vùng chứa nội dung bên trái -->
+        <div id="left">
+            <h3>Menu Trái</h3>
+            <ul>
+                <li><a href="#">Khóa học Frontend</a></li>
+                <li><a href="#">Khóa học Backend</a></li>
+                <li><a href="#">Lập trình Di động</a></li>
+                <li><a href="#">Cơ sở dữ liệu</a></li>
+                <li><a href="#">Tài liệu hướng dẫn</a></li>
+            </ul>
+        </div>
+
+        <!-- Phân vùng chứa nội dung chính ở giữa -->
+        <div id="content">
+            <h2>Nội Dung Chính</h2>
+            <div class="news-item">
+                <h3>Tin Nổi Bật (Hot News)</h3>
+                <p>Khám phá phương pháp học lập trình hiện đại thông qua các dự án thực tế tại CodeGym. Giúp học viên nắm vững kiến thức từ cơ bản đến chuyên sâu.</p>
+            </div>
+            <div class="news-item">
+                <h3>Tin Tức 1</h3>
+                <p>Hướng dẫn tạo bố cục website chuẩn bằng thẻ DIV kết hợp CSS float và clear để phân vùng hiển thị trực quan.</p>
+            </div>
+        </div>
+
+        <!-- Phân vùng chứa các thông tin bên phải trang -->
+        <div id="right">
+            <h3>Thông Tin Phụ</h3>
+            <div class="widget">
+                <h4>Lịch Làm Việc</h4>
+                <p>Thứ Hai - Thứ Bảy<br>08:00 - 17:30</p>
+            </div>
+            <div class="widget">
+                <h4>Thống Kê</h4>
+                <p>Học viên trực tuyến: <strong>1,245</strong></p>
+            </div>
+        </div>
+
+        <!-- Phân vùng chứa các thông tin cuối trang -->
+        <div id="footer">
+            <p>&copy; 2026 CodeGym. Bản quyền thuộc về Hệ thống Đào tạo Lập trình. Mọi quyền được bảo lưu.</p>
+        </div>
+    </div>
+</body>
+</html>
