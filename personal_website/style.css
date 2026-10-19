@@ -1,0 +1,147 @@
+/* ========================================================
+   [Thực hành] Tạo trang web cá nhân với CSS
+   style.css
+   ======================================================== */
+
+/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    background-image: radial-gradient(#e0e0e0 1.2px, transparent 1.2px);
+    background-size: 20px 20px;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Định dạng tiêu đề */
+header {
+    background-color: #4CAF50;
+    background-image: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Định dạng các section */
+section {
+    max-width: 650px;
+    margin: 24px auto;
+    padding: 24px 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+}
+
+section h2 {
+    color: #2E7D32;
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #E8F5E9;
+    padding-bottom: 8px;
+    font-size: 20px;
+}
+
+/* Định dạng ảnh đại diện */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #4CAF50;
+    margin: 20px;
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.profile p {
+    font-size: 16px;
+    color: #424242;
+    margin: 10px 0 0 0;
+}
+
+.goals p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #424242;
+    margin: 0;
+}
+
+/* Định dạng danh sách */
+ul {
+    list-style-type: square;
+    text-align: left;
+    display: inline-block;
+    margin-top: 10px;
+    padding-left: 24px;
+    margin-bottom: 0;
+}
+
+ul li {
+    padding: 4px 0;
+    color: #333;
+    font-size: 15px;
+}
+
+/* Định dạng bảng */
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 50%;
+    background-color: #ffffff;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 14px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    width: 35%;
+    text-align: center;
+}
+
+td {
+    text-align: left;
+}
+
+td a {
+    color: #2E7D32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* Định dạng footer */
+footer {
+    margin-top: 30px;
+    padding: 25px 20px;
+    background-color: #ddd;
+    border-top: 1px solid #ccc;
+}
+
+footer h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #333;
+    font-size: 20px;
+}
