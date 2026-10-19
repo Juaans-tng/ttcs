@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Nhúng CSS vào trang HTML</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Phần 3: Liên kết tệp CSS ngoại bộ (External-style) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ========================================================
+         PHẦN 2: INTERNAL-STYLE (CSS NỘI BỘ)
+         Được định nghĩa bên trong thẻ <style> đặt tại phần <head>
+         ======================================================== -->
+    <style>
+        .internal-section {
+            background-color: #f0fdf4;
+            border-left: 6px solid #16a34a;
+        }
+
+        .internal-badge {
+            background-color: #dcfce7;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+        }
+
+        /* Thay đổi màu sắc tiêu đề bằng Internal-style */
+        .internal-heading {
+            color: #15803d;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        /* Thay đổi màu sắc đoạn văn bằng Internal-style */
+        .internal-paragraph {
+            color: #166534;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Tiêu đề giới thiệu bài tập -->
+        <header class="header-card">
+            <h1>[Bài tập] Nhúng CSS vào trang HTML</h1>
+            <p>Minh họa 3 phương pháp nhúng CSS để thay đổi màu sắc của tiêu đề và đoạn văn bản.</p>
+        </header>
+
+        <!-- ========================================================
+             PHẦN 1: INLINE-STYLE (CSS NỘI DÒNG)
+             Thay đổi màu sắc văn bản trực tiếp bằng thuộc tính style="..."
+             ======================================================== -->
+        <section class="card" style="background-color: #fff1f2; border-left: 6px solid #e11d48;">
+            <span class="tag-badge" style="background-color: #ffe4e6; color: #be123c; border: 1px solid #fecdd3;">
+                Phần 1: Inline-Style (Nội dòng)
+            </span>
+            <!-- Tiêu đề đổi màu bằng inline-style -->
+            <h2 style="color: #be123c; font-size: 22px; font-weight: 700; margin-bottom: 8px;">
+                Tiêu đề: Lập trình Web Frontend hiện đại
+            </h2>
+            <!-- Đoạn văn đổi màu bằng inline-style -->
+            <p style="color: #9f1239; font-size: 15px; line-height: 1.6;">
+                Đoạn văn này được thay đổi màu sắc trực tiếp thông qua thuộc tính <code>style="color: #9f1239;"</code> ngay trên thẻ <code>&lt;p&gt;</code>. Phương pháp này có độ ưu tiên cao nhất nhưng chỉ nên dùng cho các trường hợp đặc biệt cần ghi đè nhanh.
+            </p>
+        </section>
+
+        <!-- ========================================================
+             PHẦN 2: INTERNAL-STYLE (CSS NỘI BỘ)
+             Thay đổi màu sắc văn bản thông qua thẻ <style> trong <head>
+             ======================================================== -->
+        <section class="card internal-section">
+            <span class="tag-badge internal-badge">
+                Phần 2: Internal-Style (Nội bộ)
+            </span>
+            <!-- Tiêu đề đổi màu bằng internal-style -->
+            <h2 class="internal-heading">
+                Tiêu đề: Thiết kế giao diện với CSS3
+            </h2>
+            <!-- Đoạn văn đổi màu bằng internal-style -->
+            <p class="internal-paragraph">
+                Đoạn văn này được thay đổi màu sắc bằng bộ chọn lớp <code>.internal-paragraph</code> được khai báo trong cặp thẻ <code>&lt;style&gt;</code> ở phần <code>&lt;head&gt;</code> của trang. Phương pháp này phù hợp khi cần định dạng riêng biệt cho một trang đơn lẻ.
+            </p>
+        </section>
+
+        <!-- ========================================================
+             PHẦN 3: EXTERNAL-STYLE (CSS NGOẠI BỘ)
+             Thay đổi màu sắc văn bản thông qua tệp style.css độc lập
+             ======================================================== -->
+        <section class="card external-section">
+            <span class="tag-badge external-badge">
+                Phần 3: External-Style (Ngoại bộ)
+            </span>
+            <!-- Tiêu đề đổi màu bằng external-style -->
+            <h2 class="external-heading">
+                Tiêu đề: Tối ưu kiến trúc mã nguồn với External CSS
+            </h2>
+            <!-- Đoạn văn đổi màu bằng external-style -->
+            <p class="external-paragraph">
+                Đoạn văn này được thay đổi màu sắc bằng bộ chọn lớp <code>.external-paragraph</code> được viết trong tệp <code>style.css</code> độc lập và nhúng vào trang qua thẻ <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>. Đây là phương pháp chuẩn mực, dễ bảo trì và tái sử dụng nhất.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
