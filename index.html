@@ -1,191 +1,19 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Thực hành] Sử dụng Box Model 1</title>
-<!-- Google Fonts: Inter -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ========================================================
-   Mã nguồn CSS Box Model theo đúng yêu cầu đề bài
-   ======================================================== */
 div {
    margin: 25px;
    padding: 35px;
    width: 200px;
    background-color: lightseagreen;
    border: 20px dashed indianred;
-   font-family: 'Inter', Arial, sans-serif;
-   font-weight: 600;
-   color: #ffffff;
-   text-align: center;
-}
-
-/* ========================================================
-   Định dạng giao diện phần giải thích và bảng tính Box Model
-   (Sử dụng thẻ semantic: body, section, header, table, p... 
-   để không ảnh hưởng tới selector div của đề bài)
-   ======================================================== */
-body {
-   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-   background-color: #f8fafc;
-   color: #1e293b;
-   line-height: 1.6;
-   margin: 0;
-   padding: 20px;
-}
-
-header {
-   max-width: 720px;
-   margin: 10px auto 20px auto;
-   background: #ffffff;
-   padding: 24px 28px;
-   border-radius: 14px;
-   border: 1px solid #e2e8f0;
-   box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.05);
-}
-
-header h1 {
-   margin: 0 0 6px 0;
-   font-size: 24px;
-   color: #0f172a;
-}
-
-header p {
-   margin: 0;
-   color: #64748b;
-   font-size: 14px;
-}
-
-.demo-container {
-   max-width: 720px;
-   margin: 0 auto 24px auto;
-   background: #ffffff;
-   padding: 20px;
-   border-radius: 14px;
-   border: 1px solid #e2e8f0;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.05);
-}
-
-section.explanation-card {
-   max-width: 720px;
-   margin: 0 auto;
-   background: #ffffff;
-   padding: 24px 28px;
-   border-radius: 14px;
-   border: 1px solid #e2e8f0;
-   box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.05);
-}
-
-section.explanation-card h2 {
-   margin-top: 0;
-   font-size: 18px;
-   color: #0f172a;
-   border-bottom: 2px solid #f1f5f9;
-   padding-bottom: 10px;
-   margin-bottom: 14px;
-}
-
-table.calc-table {
-   width: 100%;
-   border-collapse: collapse;
-   margin: 14px 0;
-   font-size: 14px;
-}
-
-table.calc-table th, table.calc-table td {
-   border: 1px solid #e2e8f0;
-   padding: 10px 14px;
-   text-align: left;
-}
-
-table.calc-table th {
-   background-color: #f1f5f9;
-   color: #334155;
-   font-weight: 600;
-}
-
-table.calc-table tr:last-child {
-   background-color: #f0fdf4;
-   font-weight: 700;
-   color: #166534;
-}
-
-.formula-box {
-   background-color: #eff6ff;
-   border-left: 4px solid #2563eb;
-   padding: 12px 16px;
-   border-radius: 6px;
-   color: #1e40af;
-   font-size: 14px;
-   font-weight: 500;
-   margin-top: 12px;
 }
 </style>
 </head>
 <body>
-
-<header>
-   <h1>[Thực hành] Sử dụng Box Model 1</h1>
-   <p>Minh họa cách tính kích thước tổng thể của một phần tử trong mô hình hộp (Box Model).</p>
-</header>
-
-<main class="demo-container">
-   <!-- ========================================================
-        Phần tử div theo đúng yêu cầu đề bài:
-        width: 200px, padding: 35px, border: 20px, margin: 25px
-        ======================================================== -->
-   <div>
-   Content demo box<br/>
-   </div>
-</main>
-
-<section class="explanation-card">
-   <h2>📐 Chi tiết tính toán kích thước Box Model</h2>
-   <p>Tổng chiều rộng của phần tử <code>&lt;div&gt;</code> trên được tính bằng công thức:</p>
-   
-   <table class="calc-table">
-      <tr>
-         <th>Thành phần Box Model</th>
-         <th>Giá trị thiết lập</th>
-         <th>Kích thước đóng góp vào chiều rộng</th>
-      </tr>
-      <tr>
-         <td><strong>Content Width</strong> (Chiều rộng nội dung)</td>
-         <td><code>width: 200px;</code></td>
-         <td>200px</td>
-      </tr>
-      <tr>
-         <td><strong>Padding</strong> (Đệm trái + phải)</td>
-         <td><code>padding: 35px;</code></td>
-         <td>35px (trái) + 35px (phải) = <strong>70px</strong></td>
-      </tr>
-      <tr>
-         <td><strong>Border</strong> (Viền trái + phải)</td>
-         <td><code>border: 20px dashed indianred;</code></td>
-         <td>20px (trái) + 20px (phải) = <strong>40px</strong></td>
-      </tr>
-      <tr>
-         <td><strong>Margin</strong> (Lề ngoài trái + phải)</td>
-         <td><code>margin: 25px;</code></td>
-         <td>25px (trái) + 25px (phải) = <strong>50px</strong></td>
-      </tr>
-      <tr>
-         <td><strong>TỔNG CHIỀU RỘNG (Total Width)</strong></td>
-         <td colspan="2"><strong>200 + 70 + 40 + 50 = 360px</strong></td>
-      </tr>
-   </table>
-
-   <p class="formula-box">
-      💡 <strong>Công thức:</strong> Total Width = width + (padding-left + padding-right) + (border-left + border-right) + (margin-left + margin-right) = 360px
-   </p>
-</section>
-
+<div>
+Content demo box<br/>
+</div>
 </body>
 </html>
