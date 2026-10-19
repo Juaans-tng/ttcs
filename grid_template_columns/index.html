@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành: CSS grid-template-columns</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>CSS | Thuộc tính grid-template-columns</h1>
+            <p class="subtitle">Khám phá cách thiết lập số lượng cột và kích thước của các cột trong CSS Grid Layout</p>
+        </header>
+
+        <!-- BẢNG TÓM TẮT LÝ THUYẾT -->
+        <section class="card theory-card">
+            <h2>📖 Cú pháp & Giá trị của grid-template-columns</h2>
+            <div class="syntax-box">
+                <code>grid-template-columns: none | auto | max-content | min-content | length (px, %, fr) | initial | inherit;</code>
+            </div>
+            <ul class="value-list">
+                <li><strong>length / fr:</strong> Đặt kích thước cụ thể bằng <code>px</code>, <code>%</code> hoặc đơn vị phân số không gian linh hoạt <code>fr</code> (fractional unit).</li>
+                <li><strong>auto:</strong> Tự động xác định kích thước dựa trên nội dung và không gian có sẵn.</li>
+                <li><strong>min-content / max-content:</strong> Kích thước tối thiểu không bị tràn hoặc tối đa không bị ngắt dòng.</li>
+            </ul>
+        </section>
+
+        <!-- VÍ DỤ 1: 3 CỘT BẰNG NHAU (1fr 1fr 1fr) -->
+        <section class="card example-card">
+            <div class="card-title-bar">
+                <h2>Ví dụ 1: Tạo 3 cột có kích thước bằng nhau</h2>
+                <span class="badge badge-blue">grid-template-columns: 1fr 1fr 1fr;</span>
+            </div>
+            <p class="desc">
+                Sử dụng 3 giá trị <code>1fr</code> chia đều không gian lưới thành 3 cột bằng nhau (mỗi cột chiếm 33.33%). 6 phần tử tự động xếp thành 2 hàng.
+            </p>
+
+            <div class="grid-container example-1">
+                <div>Ô 1</div>
+                <div>Ô 2</div>
+                <div>Ô 3</div>
+                <div>Ô 4</div>
+                <div>Ô 5</div>
+                <div>Ô 6</div>
+            </div>
+
+            <div class="code-preview">
+                <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.grid-container div {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- VÍ DỤ 2: CÁC CỘT CÓ KÍCH THƯỚC KHÁC NHAU (100px 200px 1fr) -->
+        <section class="card example-card">
+            <div class="card-title-bar">
+                <h2>Ví dụ 2: Tạo các cột có kích thước khác nhau</h2>
+                <span class="badge badge-green">grid-template-columns: 100px 200px 1fr;</span>
+            </div>
+            <p class="desc">
+                Cột 1 cố định <strong>100px</strong>, Cột 2 cố định <strong>200px</strong>, Cột 3 linh hoạt sử dụng toàn bộ phần không gian còn lại với <strong>1fr</strong>.
+            </p>
+
+            <div class="grid-container example-2">
+                <div>Cột 1 (100px)</div>
+                <div>Cột 2 (200px)</div>
+                <div>Cột 3 (1fr còn lại)</div>
+                <div>Cột 1 (100px)</div>
+                <div>Cột 2 (200px)</div>
+                <div>Cột 3 (1fr còn lại)</div>
+            </div>
+
+            <div class="code-preview">
+                <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: 100px 200px 1fr;
+    gap: 10px;
+}
+.grid-container div {
+    background-color: lightgreen;
+    padding: 20px;
+    text-align: center;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- VÍ DỤ MỞ RỘNG: HÀM REPEAT() & RESPONSIVE GRID -->
+        <section class="card example-card">
+            <div class="card-title-bar">
+                <h2>Ví dụ Mở rộng: Sử dụng hàm repeat() và minmax()</h2>
+                <span class="badge badge-orange">repeat(auto-fit, minmax(180px, 1fr))</span>
+            </div>
+            <p class="desc">
+                Tự động co giãn số lượng cột theo độ rộng màn hình mà không cần dùng media query (Responsive Grid hoàn hảo).
+            </p>
+
+            <div class="grid-container example-3">
+                <div>Phần tử A</div>
+                <div>Phần tử B</div>
+                <div>Phần tử C</div>
+                <div>Phần tử D</div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 CodeGym. Bài thực hành CSS Grid Layout: grid-template-columns property.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
