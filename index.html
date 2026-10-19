@@ -1,110 +1,191 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Bài tập] Nhúng CSS vào trang HTML</title>
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Thực hành] Sử dụng Box Model 1</title>
+<!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ========================================================
+   Mã nguồn CSS Box Model theo đúng yêu cầu đề bài
+   ======================================================== */
+div {
+   margin: 25px;
+   padding: 35px;
+   width: 200px;
+   background-color: lightseagreen;
+   border: 20px dashed indianred;
+   font-family: 'Inter', Arial, sans-serif;
+   font-weight: 600;
+   color: #ffffff;
+   text-align: center;
+}
 
-    <!-- Phần 3: Liên kết tệp CSS ngoại bộ (External-style) -->
-    <link rel="stylesheet" href="style.css">
+/* ========================================================
+   Định dạng giao diện phần giải thích và bảng tính Box Model
+   (Sử dụng thẻ semantic: body, section, header, table, p... 
+   để không ảnh hưởng tới selector div của đề bài)
+   ======================================================== */
+body {
+   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+   background-color: #f8fafc;
+   color: #1e293b;
+   line-height: 1.6;
+   margin: 0;
+   padding: 20px;
+}
 
-    <!-- ========================================================
-         PHẦN 2: INTERNAL-STYLE (CSS NỘI BỘ)
-         Được định nghĩa bên trong thẻ <style> đặt tại phần <head>
-         ======================================================== -->
-    <style>
-        .internal-section {
-            background-color: #f0fdf4;
-            border-left: 6px solid #16a34a;
-        }
+header {
+   max-width: 720px;
+   margin: 10px auto 20px auto;
+   background: #ffffff;
+   padding: 24px 28px;
+   border-radius: 14px;
+   border: 1px solid #e2e8f0;
+   box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.05);
+}
 
-        .internal-badge {
-            background-color: #dcfce7;
-            color: #15803d;
-            border: 1px solid #bbf7d0;
-        }
+header h1 {
+   margin: 0 0 6px 0;
+   font-size: 24px;
+   color: #0f172a;
+}
 
-        /* Thay đổi màu sắc tiêu đề bằng Internal-style */
-        .internal-heading {
-            color: #15803d;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
+header p {
+   margin: 0;
+   color: #64748b;
+   font-size: 14px;
+}
 
-        /* Thay đổi màu sắc đoạn văn bằng Internal-style */
-        .internal-paragraph {
-            color: #166534;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-    </style>
+.demo-container {
+   max-width: 720px;
+   margin: 0 auto 24px auto;
+   background: #ffffff;
+   padding: 20px;
+   border-radius: 14px;
+   border: 1px solid #e2e8f0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.05);
+}
+
+section.explanation-card {
+   max-width: 720px;
+   margin: 0 auto;
+   background: #ffffff;
+   padding: 24px 28px;
+   border-radius: 14px;
+   border: 1px solid #e2e8f0;
+   box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.05);
+}
+
+section.explanation-card h2 {
+   margin-top: 0;
+   font-size: 18px;
+   color: #0f172a;
+   border-bottom: 2px solid #f1f5f9;
+   padding-bottom: 10px;
+   margin-bottom: 14px;
+}
+
+table.calc-table {
+   width: 100%;
+   border-collapse: collapse;
+   margin: 14px 0;
+   font-size: 14px;
+}
+
+table.calc-table th, table.calc-table td {
+   border: 1px solid #e2e8f0;
+   padding: 10px 14px;
+   text-align: left;
+}
+
+table.calc-table th {
+   background-color: #f1f5f9;
+   color: #334155;
+   font-weight: 600;
+}
+
+table.calc-table tr:last-child {
+   background-color: #f0fdf4;
+   font-weight: 700;
+   color: #166534;
+}
+
+.formula-box {
+   background-color: #eff6ff;
+   border-left: 4px solid #2563eb;
+   padding: 12px 16px;
+   border-radius: 6px;
+   color: #1e40af;
+   font-size: 14px;
+   font-weight: 500;
+   margin-top: 12px;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Tiêu đề giới thiệu bài tập -->
-        <header class="header-card">
-            <h1>[Bài tập] Nhúng CSS vào trang HTML</h1>
-            <p>Minh họa 3 phương pháp nhúng CSS để thay đổi màu sắc của tiêu đề và đoạn văn bản.</p>
-        </header>
 
-        <!-- ========================================================
-             PHẦN 1: INLINE-STYLE (CSS NỘI DÒNG)
-             Thay đổi màu sắc văn bản trực tiếp bằng thuộc tính style="..."
-             ======================================================== -->
-        <section class="card" style="background-color: #fff1f2; border-left: 6px solid #e11d48;">
-            <span class="tag-badge" style="background-color: #ffe4e6; color: #be123c; border: 1px solid #fecdd3;">
-                Phần 1: Inline-Style (Nội dòng)
-            </span>
-            <!-- Tiêu đề đổi màu bằng inline-style -->
-            <h2 style="color: #be123c; font-size: 22px; font-weight: 700; margin-bottom: 8px;">
-                Tiêu đề: Lập trình Web Frontend hiện đại
-            </h2>
-            <!-- Đoạn văn đổi màu bằng inline-style -->
-            <p style="color: #9f1239; font-size: 15px; line-height: 1.6;">
-                Đoạn văn này được thay đổi màu sắc trực tiếp thông qua thuộc tính <code>style="color: #9f1239;"</code> ngay trên thẻ <code>&lt;p&gt;</code>. Phương pháp này có độ ưu tiên cao nhất nhưng chỉ nên dùng cho các trường hợp đặc biệt cần ghi đè nhanh.
-            </p>
-        </section>
+<header>
+   <h1>[Thực hành] Sử dụng Box Model 1</h1>
+   <p>Minh họa cách tính kích thước tổng thể của một phần tử trong mô hình hộp (Box Model).</p>
+</header>
 
-        <!-- ========================================================
-             PHẦN 2: INTERNAL-STYLE (CSS NỘI BỘ)
-             Thay đổi màu sắc văn bản thông qua thẻ <style> trong <head>
-             ======================================================== -->
-        <section class="card internal-section">
-            <span class="tag-badge internal-badge">
-                Phần 2: Internal-Style (Nội bộ)
-            </span>
-            <!-- Tiêu đề đổi màu bằng internal-style -->
-            <h2 class="internal-heading">
-                Tiêu đề: Thiết kế giao diện với CSS3
-            </h2>
-            <!-- Đoạn văn đổi màu bằng internal-style -->
-            <p class="internal-paragraph">
-                Đoạn văn này được thay đổi màu sắc bằng bộ chọn lớp <code>.internal-paragraph</code> được khai báo trong cặp thẻ <code>&lt;style&gt;</code> ở phần <code>&lt;head&gt;</code> của trang. Phương pháp này phù hợp khi cần định dạng riêng biệt cho một trang đơn lẻ.
-            </p>
-        </section>
+<main class="demo-container">
+   <!-- ========================================================
+        Phần tử div theo đúng yêu cầu đề bài:
+        width: 200px, padding: 35px, border: 20px, margin: 25px
+        ======================================================== -->
+   <div>
+   Content demo box<br/>
+   </div>
+</main>
 
-        <!-- ========================================================
-             PHẦN 3: EXTERNAL-STYLE (CSS NGOẠI BỘ)
-             Thay đổi màu sắc văn bản thông qua tệp style.css độc lập
-             ======================================================== -->
-        <section class="card external-section">
-            <span class="tag-badge external-badge">
-                Phần 3: External-Style (Ngoại bộ)
-            </span>
-            <!-- Tiêu đề đổi màu bằng external-style -->
-            <h2 class="external-heading">
-                Tiêu đề: Tối ưu kiến trúc mã nguồn với External CSS
-            </h2>
-            <!-- Đoạn văn đổi màu bằng external-style -->
-            <p class="external-paragraph">
-                Đoạn văn này được thay đổi màu sắc bằng bộ chọn lớp <code>.external-paragraph</code> được viết trong tệp <code>style.css</code> độc lập và nhúng vào trang qua thẻ <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>. Đây là phương pháp chuẩn mực, dễ bảo trì và tái sử dụng nhất.
-            </p>
-        </section>
-    </div>
+<section class="explanation-card">
+   <h2>📐 Chi tiết tính toán kích thước Box Model</h2>
+   <p>Tổng chiều rộng của phần tử <code>&lt;div&gt;</code> trên được tính bằng công thức:</p>
+   
+   <table class="calc-table">
+      <tr>
+         <th>Thành phần Box Model</th>
+         <th>Giá trị thiết lập</th>
+         <th>Kích thước đóng góp vào chiều rộng</th>
+      </tr>
+      <tr>
+         <td><strong>Content Width</strong> (Chiều rộng nội dung)</td>
+         <td><code>width: 200px;</code></td>
+         <td>200px</td>
+      </tr>
+      <tr>
+         <td><strong>Padding</strong> (Đệm trái + phải)</td>
+         <td><code>padding: 35px;</code></td>
+         <td>35px (trái) + 35px (phải) = <strong>70px</strong></td>
+      </tr>
+      <tr>
+         <td><strong>Border</strong> (Viền trái + phải)</td>
+         <td><code>border: 20px dashed indianred;</code></td>
+         <td>20px (trái) + 20px (phải) = <strong>40px</strong></td>
+      </tr>
+      <tr>
+         <td><strong>Margin</strong> (Lề ngoài trái + phải)</td>
+         <td><code>margin: 25px;</code></td>
+         <td>25px (trái) + 25px (phải) = <strong>50px</strong></td>
+      </tr>
+      <tr>
+         <td><strong>TỔNG CHIỀU RỘNG (Total Width)</strong></td>
+         <td colspan="2"><strong>200 + 70 + 40 + 50 = 360px</strong></td>
+      </tr>
+   </table>
+
+   <p class="formula-box">
+      💡 <strong>Công thức:</strong> Total Width = width + (padding-left + padding-right) + (border-left + border-right) + (margin-left + margin-right) = 360px
+   </p>
+</section>
+
 </body>
 </html>
