@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Danh sách trong CSS</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 1. Chuẩn bị: Liên kết file CSS với HTML -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header chính -->
+        <header class="header-box">
+            <h1>[Thực hành] Danh sách trong CSS</h1>
+            <p>Luyện tập sử dụng các thuộc tính CSS để định kiểu, đổi vị trí, sử dụng hình ảnh và phối màu cho danh sách HTML.</p>
+        </header>
+
+        <!-- 2. Thay đổi kiểu đánh dấu danh sách (list-style-type: square) -->
+        <section class="exercise-card">
+            <div class="card-title">
+                <h2>2. Danh sách không thứ tự (Dấu vuông)</h2>
+                <span class="code-badge">list-style-type: square;</span>
+            </div>
+            <p class="description">Sử dụng thẻ &lt;ul&gt; và thuộc tính list-style-type để chuyển dấu đầu dòng thành hình vuông.</p>
+            <ul class="list-square">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Git</li>
+            </ul>
+        </section>
+
+        <!-- 3. Thay đổi kiểu đánh dấu danh sách có thứ tự (list-style-type: upper-roman) -->
+        <section class="exercise-card">
+            <div class="card-title">
+                <h2>3. Danh sách có thứ tự (Số La Mã in hoa)</h2>
+                <span class="code-badge">list-style-type: upper-roman;</span>
+            </div>
+            <p class="description">Sử dụng thẻ &lt;ol&gt; và thuộc tính list-style-type để đánh số các bước bằng chữ số La Mã.</p>
+            <ol class="list-roman">
+                <li>Học HTML</li>
+                <li>Học CSS</li>
+                <li>Học JavaScript</li>
+                <li>Học Git</li>
+            </ol>
+        </section>
+
+        <!-- 4. Sử dụng hình ảnh làm dấu đánh dấu (list-style-image) -->
+        <section class="exercise-card">
+            <div class="card-title">
+                <h2>4. Sử dụng hình ảnh làm dấu đánh dấu</h2>
+                <span class="code-badge">list-style-image: url('bullet.png');</span>
+            </div>
+            <p class="description">Sử dụng thuộc tính list-style-image kết hợp với hàm url() để đặt biểu tượng hình ảnh làm dấu đầu dòng.</p>
+            <ul class="list-image">
+                <li>Visual Studio Code</li>
+                <li>Google Chrome</li>
+                <li>GitHub</li>
+                <li>Git</li>
+            </ul>
+        </section>
+
+        <!-- 5. Thay đổi vị trí dấu đánh dấu (list-style-position: outside vs inside) -->
+        <section class="exercise-card">
+            <div class="card-title">
+                <h2>5. Thay đổi vị trí dấu đánh dấu</h2>
+                <span class="code-badge">list-style-position: outside | inside;</span>
+            </div>
+            <p class="description">So sánh vị trí dấu đánh dấu nằm bên ngoài lề nội dung (outside) và nằm bên trong khối nội dung (inside).</p>
+            <div class="comparison-grid">
+                <div class="comparison-box">
+                    <h3>Vị trí Outside (Mặc định)</h3>
+                    <ul class="list-outside">
+                        <li>Visual Studio Code</li>
+                        <li>Google Chrome</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+                <div class="comparison-box">
+                    <h3>Vị trí Inside (Bên trong hộp)</h3>
+                    <ul class="list-inside">
+                        <li>Visual Studio Code</li>
+                        <li>Google Chrome</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Sử dụng thuộc tính rút gọn list-style -->
+        <section class="exercise-card">
+            <div class="card-title">
+                <h2>6. Thuộc tính rút gọn list-style</h2>
+                <span class="code-badge">list-style: square inside url('bullet.png');</span>
+            </div>
+            <p class="description">Thiết lập đồng thời kiểu đánh dấu (type), vị trí (position) và hình ảnh (image) chỉ với một dòng CSS ngắn gọn.</p>
+            <ul class="list-shorthand">
+                <li>Cú pháp rút gọn giúp code ngắn gọn và dễ bảo trì</li>
+                <li>Kết hợp đồng thời kiểu dấu dự phòng và hình ảnh</li>
+                <li>Điều chỉnh vị trí hiển thị vào bên trong khối nội dung</li>
+            </ul>
+        </section>
+
+        <!-- 7. Tạo kiểu danh sách với màu sắc -->
+        <section class="exercise-card">
+            <div class="card-title">
+                <h2>7. Tạo kiểu danh sách với màu sắc & khoảng cách</h2>
+                <span class="code-badge">background-color, color, padding, margin</span>
+            </div>
+            <p class="description">Định kiểu danh sách các ngôn ngữ lập trình với màu nền tối, màu chữ cyan và khoảng cách đệm hài hòa.</p>
+            <ul class="list-colored">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+            </ul>
+        </section>
+
+        <!-- 8. Bài tập tổng hợp -->
+        <section class="exercise-card">
+            <div class="card-title">
+                <h2>8. Bài tập tổng hợp: Lộ trình học lập trình Web</h2>
+                <span class="code-badge">list-style: decimal inside;</span>
+            </div>
+            <p class="description">Kết hợp cấu trúc danh sách, kiểu đánh dấu, màu nền hiện đại, khoảng cách padding/margin và hiệu ứng hover.</p>
+            <div class="comprehensive-box">
+                <h3>🚀 Lộ trình học lập trình Web</h3>
+                <p class="sub-heading">Các bước cốt lõi từ cơ bản đến làm chủ công cụ lập trình web</p>
+                <ol class="roadmap-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
