@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành: CSS grid-row-gap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-container">
+        <header class="header">
+            <h1>CSS | Thuộc tính grid-row-gap</h1>
+            <p class="subtitle">Xác định kích thước khoảng cách (gap) giữa các hàng trong CSS Grid Layout</p>
+        </header>
+
+        <!-- LÝ THUYẾT VÀ CÚ PHÁP -->
+        <section class="card info-card">
+            <h2>📖 Cú pháp & Giá trị của grid-row-gap</h2>
+            <div class="syntax-badge">
+                <code>grid-row-gap: length | percentage | global-values;</code>
+            </div>
+            <p class="note">
+                💡 <strong>Lưu ý hiện đại:</strong> Trong CSS hiện đại (Grid Specification mới), thuộc tính <code>row-gap</code> được khuyến khích sử dụng thay cho tiền tố cũ <code>grid-row-gap</code> (cả hai đều hoạt động tương đương nhau).
+            </p>
+        </section>
+
+        <!-- VÍ DỤ 1: ĐỘ DÀI CỐ ĐỊNH (LENGTH) -->
+        <section class="card example-card">
+            <div class="card-title-bar">
+                <h2>1. Giá trị độ dài cố định: <code>grid-row-gap: 20px;</code></h2>
+                <span class="badge badge-blue">grid-row-gap: 20px;</span>
+            </div>
+            <p class="desc">
+                Khoảng cách giữa các hàng trong Grid được thiết lập cố định là <strong>20px</strong>.
+            </p>
+
+            <div class="grid-container ex1-gap">
+                <div>Ô 1</div>
+                <div>Ô 2</div>
+                <div>Ô 3</div>
+                <div>Ô 4</div>
+            </div>
+
+            <div class="code-box">
+                <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+}
+.grid-container div {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- VÍ DỤ 2: PHẦN TRĂM (%) -->
+        <section class="card example-card">
+            <div class="card-title-bar">
+                <h2>2. Giá trị phần trăm: <code>grid-row-gap: 5%;</code></h2>
+                <span class="badge badge-green">grid-row-gap: 5%; (height: 400px)</span>
+            </div>
+            <p class="desc">
+                Khoảng cách giữa các hàng được tính bằng <strong>5%</strong> theo chiều cao của container (400px * 5% = 20px).
+            </p>
+
+            <div class="grid-container ex2-gap">
+                <div>Ô 1</div>
+                <div>Ô 2</div>
+                <div>Ô 3</div>
+                <div>Ô 4</div>
+            </div>
+
+            <div class="code-box">
+                <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 5%;
+    height: 400px;
+}
+.grid-container div {
+    background-color: lightgreen;
+    padding: 20px;
+    text-align: center;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- VÍ DỤ 3: GIÁ TRỊ TOÀN CỤC (GLOBAL VALUES) -->
+        <section class="card example-card">
+            <div class="card-title-bar">
+                <h2>3. Giá trị toàn cục (Global Values)</h2>
+                <span class="badge badge-orange">initial | inherit | unset</span>
+            </div>
+            <ul class="global-desc-list">
+                <li><code>initial</code>: Đặt thuộc tính về giá trị mặc định ban đầu (0px - không có khoảng cách hàng).</li>
+                <li><code>inherit</code>: Kế thừa giá trị khoảng cách hàng từ phần tử cha bao bọc.</li>
+                <li><code>unset</code>: Nếu có thể kế thừa thì kế thừa, nếu không thì lấy giá trị khởi tạo.</li>
+            </ul>
+
+            <div class="grid-container ex3-initial">
+                <div>Ô 1 (initial: 0px)</div>
+                <div>Ô 2 (initial: 0px)</div>
+                <div>Ô 3 (initial: 0px)</div>
+                <div>Ô 4 (initial: 0px)</div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 CodeGym. Bài thực hành CSS Grid Layout: grid-row-gap property.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

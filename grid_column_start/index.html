@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành: CSS grid-column-start</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-container">
+        <header class="header">
+            <h1>CSS | Thuộc tính grid-column-start</h1>
+            <p class="subtitle">Xác định đường kẻ cột (column line) nơi Grid Item bắt đầu hiển thị</p>
+        </header>
+
+        <!-- SƠ ĐỒ ĐƯỜNG KẺ CỘT (COLUMN LINES) -->
+        <section class="card line-diagram-card">
+            <h2>📐 Sơ đồ hệ trục đường kẻ cột (Column Lines)</h2>
+            <p>Với Grid có 4 cột, sẽ có 5 đường kẻ cột được đánh số thứ tự từ 1 đến 5:</p>
+            <div class="line-visualizer">
+                <div class="line-marker m1"><span>Đường kẻ 1</span></div>
+                <div class="col-box">Cột 1</div>
+                <div class="line-marker m2"><span>Đường kẻ 2</span></div>
+                <div class="col-box">Cột 2</div>
+                <div class="line-marker m3"><span>Đường kẻ 3</span></div>
+                <div class="col-box">Cột 3</div>
+                <div class="line-marker m4"><span>Đường kẻ 4</span></div>
+                <div class="col-box">Cột 4</div>
+                <div class="line-marker m5"><span>Đường kẻ 5</span></div>
+            </div>
+            <div class="syntax-badge">
+                <code>grid-column-start: auto | span n | column-line;</code>
+            </div>
+        </section>
+
+        <!-- VÍ DỤ 1: GIÁ TRỊ AUTO -->
+        <section class="card example-card">
+            <div class="card-title-bar">
+                <h2>1. Giá trị <code>auto</code> (Mặc định)</h2>
+                <span class="badge badge-gray">grid-column-start: auto;</span>
+            </div>
+            <p class="desc">
+                Item được đặt theo luồng sắp xếp thông thường của Grid (bắt đầu tự động tại ô trống tiếp theo).
+            </p>
+
+            <div class="grid-container ex1-grid">
+                <div class="item1 target-item">1 (auto)</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+
+            <div class="code-box">
+                <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    gap: 10px;
+}
+.item1 {
+    grid-column-start: auto;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- VÍ DỤ 2: GIÁ TRỊ SPAN N -->
+        <section class="card example-card">
+            <div class="card-title-bar">
+                <h2>2. Giá trị <code>span n</code> (Kéo dài n cột)</h2>
+                <span class="badge badge-blue">grid-column-start: span 2;</span>
+            </div>
+            <p class="desc">
+                Chỉ định Grid Item kéo dài qua số lượng cột là <code>n</code> (trong ví dụ là <code>span 2</code>, Item 1 chiếm 2 cột).
+            </p>
+
+            <div class="grid-container ex2-grid">
+                <div class="item1 target-item">Item 1 (span 2)</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+            </div>
+
+            <div class="code-box">
+                <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.item1 {
+    grid-column-start: span 2;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- VÍ DỤ 3: GIÁ TRỊ COLUMN-LINE CỤ THỂ -->
+        <section class="card example-card">
+            <div class="card-title-bar">
+                <h2>3. Giá trị <code>column-line</code> (Đường kẻ cụ thể)</h2>
+                <span class="badge badge-green">grid-column-start: 2;</span>
+            </div>
+            <p class="desc">
+                Chỉ định Item bắt đầu từ đường kẻ cột số 2 (do đó Cột 1 phía trước để trống).
+            </p>
+
+            <div class="grid-container ex3-grid">
+                <div class="item1 target-item">Item 1 (start: 2)</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+            </div>
+
+            <div class="code-box">
+                <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.item1 {
+    grid-column-start: 2;
+}</code></pre>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 CodeGym. Bài thực hành CSS Grid Layout: grid-column-start property.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
