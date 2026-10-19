@@ -1,0 +1,360 @@
+/* =========================================================
+   BÀI 3: [BÀI TẬP] TẠO LAYOUT VỚI RWD (RESPONSIVE WEB DESIGN)
+   Mục tiêu: Luyện tập sử dụng DIV và CSS để tạo bố cục co giãn thích ứng
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #334155;
+    line-height: 1.6;
+    padding: 20px 10px;
+}
+
+/* ================= 1. Khung Bao Toàn Bộ (#main) ================= */
+#main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+/* ================= 2. Header Vùng Đầu Trang (#head) ================= */
+#head {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: #ffffff;
+    padding: 28px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #1d4ed8;
+}
+
+.logo-box h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.logo-box span {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #93c5fd;
+    font-weight: 600;
+}
+
+.banner-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+/* ================= 3. Menu Điều Hướng (#head-link) ================= */
+#head-link {
+    background-color: #0f172a;
+    padding: 12px 24px;
+}
+
+#head-link ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#head-link a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+#head-link a:hover,
+#head-link a.active {
+    color: #ffffff;
+    background-color: #2563eb;
+}
+
+/* ================= 4. Khu Vực Thân Trang (#container) ================= */
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 520px;
+}
+
+/* --- Cột bên trái (#left) --- */
+#left {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: #f8fafc;
+    padding: 24px 20px;
+    border-right: 1px solid #e2e8f0;
+}
+
+#left h3 {
+    font-size: 1.15rem;
+    color: #0f172a;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2563eb;
+}
+
+#left ul {
+    list-style: none;
+}
+
+#left li {
+    margin-bottom: 10px;
+}
+
+#left a {
+    color: #475569;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+}
+
+#left a:hover {
+    color: #2563eb;
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+    transform: translateX(4px);
+}
+
+/* --- Cột nội dung chính (#content) --- */
+#content {
+    flex: 1;
+    padding: 28px 32px;
+    background-color: #ffffff;
+}
+
+#content h2 {
+    font-size: 1.7rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.article-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.article-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.article-card h3 {
+    font-size: 1.25rem;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+.article-card .meta {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.article-card p {
+    margin-bottom: 12px;
+    color: #334155;
+    font-size: 0.98rem;
+}
+
+.article-card code {
+    background-color: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #d97706;
+    font-size: 0.9em;
+}
+
+/* --- Cột bên phải (#right) --- */
+#right {
+    width: 260px;
+    flex-shrink: 0;
+    background-color: #f8fafc;
+    padding: 24px 20px;
+    border-left: 1px solid #e2e8f0;
+}
+
+#right h3 {
+    font-size: 1.15rem;
+    color: #0f172a;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2563eb;
+}
+
+.widget {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.widget h4 {
+    font-size: 1rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.widget p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+/* ================= 5. Chân Trang (#footer) ================= */
+#footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ================= 6. RESPONSIVE WEB DESIGN (MEDIA QUERIES) ================= */
+
+/* --- Tablet (≤ 992px) --- */
+@media screen and (max-width: 992px) {
+    #container {
+        flex-wrap: wrap;
+    }
+
+    #left {
+        width: 260px;
+    }
+
+    #content {
+        flex: 1;
+        min-width: calc(100% - 260px);
+    }
+
+    #right {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #e2e8f0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+    }
+
+    #right h3 {
+        grid-column: 1 / -1;
+        margin-bottom: 8px;
+    }
+
+    .widget {
+        margin-bottom: 0;
+    }
+}
+
+/* --- Mobile Lớn & Nhỏ (≤ 768px) --- */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    #main {
+        border-radius: 0;
+        border: none;
+    }
+
+    #head {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 20px;
+    }
+
+    #head-link ul {
+        justify-content: center;
+    }
+
+    #head-link a {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    #container {
+        flex-direction: column;
+    }
+
+    #left {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    #content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #right {
+        width: 100%;
+        display: block;
+        padding: 20px;
+    }
+
+    .widget {
+        margin-bottom: 16px;
+    }
+}
+
+/* --- Mobile Nhỏ (≤ 480px) --- */
+@media screen and (max-width: 480px) {
+    .logo-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner-text {
+        font-size: 0.9rem;
+    }
+
+    #head-link ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #head-link a {
+        width: 100%;
+    }
+}

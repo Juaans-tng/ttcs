@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập - Tạo Layout với RWD (Responsive Web Design)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Phân vùng bao toàn bộ trang web -->
+    <div id="main">
+        <!-- 1. Vùng Header: Logo và Banner -->
+        <div id="head">
+            <div class="logo-box">
+                <h1>CODEGYM</h1>
+                <span>LEARN TO CODE</span>
+            </div>
+            <div class="banner-text">HỆ THỐNG ĐÀO TẠO LẬP TRÌNH HIỆN ĐẠI</div>
+        </div>
+
+        <!-- 2. Vùng Menu điều hướng đầu trang -->
+        <div id="head-link">
+            <ul>
+                <li><a href="#" class="active">Trang chủ</a></li>
+                <li><a href="#courses">Khóa học</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="#students">Học viên</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </div>
+
+        <!-- 3. Khu vực thân trang chứa các cột nội dung -->
+        <div id="container">
+            <!-- Cột trái / Sidebar trái -->
+            <div id="left">
+                <h3>Danh Mục Khóa Học</h3>
+                <ul>
+                    <li><a href="#">Lập trình Web Frontend</a></li>
+                    <li><a href="#">Lập trình Web Backend</a></li>
+                    <li><a href="#">Lập trình Fullstack Java</a></li>
+                    <li><a href="#">Lập trình Fullstack Python</a></li>
+                    <li><a href="#">Kiểm thử phần mềm (QA/QC)</a></li>
+                    <li><a href="#">Cơ sở dữ liệu & SQL</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột nội dung chính ở giữa -->
+            <div id="content">
+                <h2>Nội Dung Chính</h2>
+                
+                <div class="article-card">
+                    <h3>Kỹ Thuật Thiết Kế Web Thích Ứng (RWD) Với CSS</h3>
+                    <div class="meta">Đăng ngày 19/10/2026 | Tác giả: Ban Chuyên Môn</div>
+                    <p>Responsive Web Design (RWD) là phương pháp tiếp cận thiết kế web giúp các trang hiển thị mượt mà và tối ưu trên tất cả các loại màn hình thiết bị từ Desktop, Tablet cho đến Mobile phone.</p>
+                    <p>Bằng việc kết hợp tỷ lệ phần trăm linh hoạt, bố cục co giãn và cú pháp <code>@media</code> truy vấn truyền thông, giao diện website luôn cân đối mà không phát sinh thanh cuộn ngang gây khó chịu cho người dùng.</p>
+                </div>
+
+                <div class="article-card">
+                    <h3>Ưu Điểm Của Việc Phân Vùng Bằng Thẻ DIV</h3>
+                    <p>Thẻ <code>&lt;div&gt;</code> đóng vai trò là các khối chứa khối ranh giới (containers) đa năng. Khi phối hợp cùng CSS Grid, Flexbox hoặc Float, các nhà phát triển dễ dàng kiểm soát luồng hiển thị và chuyển đổi linh hoạt theo từng breakpoint của thiết bị.</p>
+                </div>
+            </div>
+
+            <!-- Cột phải / Sidebar phải -->
+            <div id="right">
+                <h3>Thông Tin Phụ</h3>
+                
+                <div class="widget">
+                    <h4>🕒 Lịch Khai Giảng</h4>
+                    <p>Khóa mới bắt đầu: <strong>Thứ Hai hàng tuần</strong></p>
+                    <p>Thời gian: 18:30 - 21:00</p>
+                </div>
+
+                <div class="widget">
+                    <h4>📞 Hỗ Trợ 24/7</h4>
+                    <p>Hotline: 1800 6688</p>
+                    <p>Email: contact@codegym.vn</p>
+                </div>
+
+                <div class="widget">
+                    <h4>📊 Thống Kê Học Viên</h4>
+                    <p>Đang trực tuyến: <strong style="color: #22c55e;">1,420</strong></p>
+                    <p>Đã tốt nghiệp: <strong>8,500+</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Vùng chân trang Footer -->
+        <div id="footer">
+            <p>&copy; 2026 CodeGym Vietnam. Bố cục Responsive Web Design (RWD) chuẩn đa thiết bị.</p>
+        </div>
+    </div>
+</body>
+</html>

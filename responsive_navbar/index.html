@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar - CodeGym Thực Hành</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Thanh điều hướng Responsive -->
+    <nav class="navbar" id="mainNavbar">
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" class="active-link">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#services">Dịch vụ</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+        <div class="menu-icon" id="menuToggle" aria-label="Toggle navigation" role="button" tabindex="0">☰</div>
+    </nav>
+
+    <!-- Khu vực nội dung minh họa trải nghiệm người dùng -->
+    <main class="page-content">
+        <div class="container">
+            <div class="badge">Bài 1: Thực hành Responsive Navbar</div>
+            <h1>Thanh Điều Hướng Đáp Ứng Đa Thiết Bị</h1>
+            <p class="subtitle">Thực hành áp dụng Flexbox, Media Queries trong CSS và JavaScript để xử lý mở/đóng menu trên thiết bị di động.</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🖥️</div>
+                    <h3>Giao diện Desktop (> 768px)</h3>
+                    <p>Các mục điều hướng hiển thị thành hàng ngang (Flexbox row). Biểu tượng menu hamburger (☰) tự động ẩn đi.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📱</div>
+                    <h3>Giao diện Mobile (≤ 768px)</h3>
+                    <p>Danh sách menu ẩn đi, biểu tượng (☰) xuất hiện. Bấm vào biểu tượng để kích hoạt hiển thị menu dọc (toggle class <code>active</code>).</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Tương tác linh hoạt</h3>
+                    <p>Hỗ trợ thao tác chạm, bấm biểu tượng hamburger, tự động đóng khi chọn mục menu trên màn hình di động.</p>
+                </div>
+            </div>
+
+            <div class="instructions-box">
+                <h3>💡 Hướng dẫn kiểm tra:</h3>
+                <ol>
+                    <li>Mở công cụ kiểm tra của trình duyệt bằng cách nhấn <strong>F12</strong> (hoặc chuột phải chọn <em>Inspect</em>).</li>
+                    <li>Bật chế độ <strong>Toggle Device Toolbar</strong> (Ctrl + Shift + M) để thu nhỏ kích thước màn hình xuống dưới <strong>768px</strong>.</li>
+                    <li>Quan sát thanh điều hướng chuyển thành icon <strong>☰</strong> và nhấp vào để kiểm tra menu trượt mở mượt mà.</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
